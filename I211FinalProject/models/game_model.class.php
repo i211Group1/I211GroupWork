@@ -125,7 +125,9 @@ class GameModel {
 
         if ($query && $query->num_rows > 0) {
 
-            //game_id isn't getting passed in. 
+            //game_id isn't getting passed in.
+
+            /* tried creating an alternative was of object creation. Also doesn't work */
 
 /*            //array to store all games
             $games = array();
@@ -151,6 +153,7 @@ class GameModel {
             }
             return $games;*/
 
+            /*Original object creation by Jon*/
             $obj = $query->fetch_object();
 
             //create a game object

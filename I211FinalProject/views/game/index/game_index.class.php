@@ -35,8 +35,11 @@ class GameIndex extends GameIndexView {
                     if (strpos($image, "http://") === false AND strpos($image, "https://") === false) {
                         $image = BASE_URL . "/" . GAME_IMG . $image;
                     }
-//                    echo"<br>$image";
+
+                    
+                    /**      Printing $id to test if captured    */
                     echo "<br>Game ID is: $id";
+                    /************** Delete when finished **************/
 
 
                     echo "<div class='item'><p><a href='", BASE_URL, "/game/detail/$id'><img src='" . $image .
