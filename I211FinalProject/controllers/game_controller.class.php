@@ -1,6 +1,6 @@
 <?php
 /**
- * Author: Luke Erny
+ * Author: Luke Erny and Jennifer Baldwin
  * Date: 11/10/2022
  * File: game_controller.class.php
  * Description: the game controller
@@ -12,13 +12,14 @@ class GameController {
     //constructor
     public function __construct() {
         // create an instance of the GameModel class
-        $this->game_model = GameModel::getGameModel();
+        $this->game_model = new GameModel();
     }
+
 
     // index action that displays all board games
     public function index() {
         // retrieve all board games and store them in an array
-        $games = $this->game_model->list_movies();
+        $games = $this->game_model->list_games();
 
         // display the products
         $view = new GameIndex();
@@ -26,12 +27,26 @@ class GameController {
     }
 
     //show details of a game
-    public function detail($game_id) {
+    public function detail($id) {
         //retrieve the specific game
-        $games = $this->game_model->view_game($game_id);
+        $game = $this->game_model->view_game($id);
+
+        if(!$game){
+            //display an error
+            $message= "there was a problem display the game id='". $id. "'.";
+            $this->error($message);
+        }
 
         //display movie details
         $view = new GameDetail();
-        $view->display($games);
+        $view->display($game);
     }
+    public function error($message){
+        //create an object of the Error Class
+        $error = new GameError();
+
+        //display the error page
+        $error->display($message);
+    }
+
 }

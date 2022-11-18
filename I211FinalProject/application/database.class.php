@@ -13,7 +13,7 @@ class Database {
         'host' => 'localhost',
         'login' => 'phpuser',
         'password' => 'phpuser',
-        'database' => 'boardGame_db',
+        'database' => 'boardGame',
         'tblCheckOutItems' => 'check_out_items',
         'tblGenre' => 'genre_tbl',
         'tblInventoryGames' => 'inventory_games',
@@ -28,7 +28,10 @@ class Database {
     //constructor
     private function __construct() {
         $this->objDBConnection = @new mysqli(
-            $this->param['host'], $this->param['login'], $this->param['password'], $this->param['database']
+            $this->param['host'],
+            $this->param['login'],
+            $this->param['password'],
+            $this->param['database']
         );
         if (mysqli_connect_errno() != 0) {
             $message = "Connecting database failed: " . mysqli_connect_error() . ".";

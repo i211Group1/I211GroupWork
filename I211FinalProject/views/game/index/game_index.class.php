@@ -1,6 +1,6 @@
 <?php
 /*
- * Author: Jon Ross Richardson
+ * Author: Jon Ross Richardson and Jennifer Baldwin
  * Date:
  * Name: game_index.class.php
  * Description: This class defines a method called "display", which displays all movies.
@@ -25,19 +25,22 @@ class GameIndex extends GameIndexView {
             } else {
                 //display games in a grid; six games per row
                 foreach ($games as $game) {
-                    $id = $game->getGameId();
+                    $id = $game->getGameID();
                     $title = $game->getGameName();
-                    //$genre = $game->getGenre();
-                    $publisher = $game->getPublisherId();
-                    //$release_date = new \DateTime($game->getRelease_date());
+                    $genre = $game->getGenre();
+                    $publisher = $game->getPublisher();
                     $price = $game->getPrice();
                     $image = $game->getImage();
+
                     if (strpos($image, "http://") === false AND strpos($image, "https://") === false) {
                         $image = BASE_URL . "/" . GAME_IMG . $image;
                     }
+//                    echo"<br>$image";
+                    echo "<br>Game ID is: $id";
+
 
                     echo "<div class='item'><p><a href='", BASE_URL, "/game/detail/$id'><img src='" . $image .
-                        "'></a><span>$title<br>Publisher $publisher<br>" . $price . "</span></p></div>";
+                        "'></a><span><br>$title<br>Publisher: $publisher<br>" ."Retail:". $price . "<br>Genre: ". $genre ."</span></p></div>";
 
                 }
             }

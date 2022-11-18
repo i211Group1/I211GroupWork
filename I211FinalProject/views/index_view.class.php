@@ -10,6 +10,15 @@ class IndexView {
 
     //this method displays the page header
     static public function displayHeader($page_title) {
+        ?>
+<!--    header view goes here    -->
 
+        <?php
+
+    }
+    static public function displayFooter(){
+        ?>
+<!--    footer view goes here    -->
+        <?php
     }
 }

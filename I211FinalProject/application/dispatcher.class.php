@@ -5,8 +5,8 @@
  * File: dispatcher.class.php
  * Description: application dispatcher responsible for dissecting in pieces the requested URI and
  * routing the request to the proper method of the matched controller.
- * A typical url looks like this: http://example.com/kungfupanda/movie/view/1.
- * In this url, movie is the controller, view is the method, and 1 is the parameter.
+ * A typical url looks like this: http://example.com/I211FinalProject/game/view/1.
+ * In this url, game is the controller, view is the method, and 1 is the parameter.
  */
 
 class Dispatcher {
@@ -35,8 +35,9 @@ class Dispatcher {
         }
 
         //Now, the url_array contains controller name, followed by method name, and zero, one or more arguments
-        //get controller name or assign the default controller "ProductController"
+        //get controller name or assign the default controller "GameController"
         $controllerName = !empty($url_array[0]) ? ucfirst($url_array[0]) . 'Controller' : 'GameController';
+
 
         //create controller instance
         if (!class_exists($controllerName)) {

@@ -15,8 +15,11 @@ class ComposerStaticInite3e9c0b9db364f036517aa5d2400f8b1
         'Dispatcher' => __DIR__ . '/../..' . '/application/dispatcher.class.php',
         'Game' => __DIR__ . '/../..' . '/models/game.class.php',
         'GameController' => __DIR__ . '/../..' . '/controllers/game_controller.class.php',
+        'GameDetail' => __DIR__ . '/../..' . '/views/game/detail/game_detail.class.php',
+        'GameError' => __DIR__ . '/../..' . '/views/game/error/game_error.class.php',
         'GameIndex' => __DIR__ . '/../..' . '/views/game/index/game_index.class.php',
         'GameIndexView' => __DIR__ . '/../..' . '/views/game/game_index_view.class.php',
+        'GameModel' => __DIR__ . '/../..' . '/models/game_model.class.php',
         'IndexView' => __DIR__ . '/../..' . '/views/index_view.class.php',
     );
 
