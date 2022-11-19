@@ -13,7 +13,8 @@ error_reporting(E_ALL);
 date_default_timezone_set('America/New_York');
 
 //base url of the application
-define("BASE_URL", "/i211/I211FinalProjectTest/index.php");
+define("BASE_URL", "/I211GroupWork/I211FinalProjectTest/index.php");
+//define("BASE_URL", "/i211/I211FinalProjectTest/index.php");
 
 /*************************************************************************************
  *                       settings for products                                         *
