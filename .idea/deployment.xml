@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" serverName="http://localhost" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="XAMPP Apache Server">
+      <paths name="http://localhost">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/I211GroupWork" />
+            <mapping local="$PROJECT_DIR$" web="/211GroupWork" />
           </mappings>
         </serverdata>
       </paths>

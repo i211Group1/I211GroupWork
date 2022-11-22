@@ -36,13 +36,7 @@ class GameIndex extends GameIndexView {
                         $image = BASE_URL . "/" . GAME_IMG . $image;
                     }
 
-
-                    /**      Printing $id to test if captured    */
-                    echo "<br>Game ID is: $id";
-                    /************** Delete when finished **************/
-
-
-                    echo "<div class='item'><p><a href='", BASE_URL, "/game/detail/$id'><img src='" . $image .
+                    echo "<div class='grid-item'><p><a href='", BASE_URL, "/game/detail/$id'><img src='" . $image .
                         "'></a><span><br>$title<br>Publisher: $publisher<br>" ."Retail:". $price . "<br>Genre: ". $genre ."</span></p></div>";
 
                 }

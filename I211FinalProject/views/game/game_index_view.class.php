@@ -12,6 +12,7 @@ class GameIndexView extends IndexView {
     public static function displayHeader($title) {
         parent::displayHeader($title)
         ?>
+
         <script>
             //the media type
             var media = "game";
@@ -23,6 +24,7 @@ class GameIndexView extends IndexView {
                 <input type="submit" value="Go" />
             </form>
             <div id="suggestionDiv"></div>
+
         </div>
         <?php
     }

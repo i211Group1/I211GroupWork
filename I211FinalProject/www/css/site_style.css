@@ -1,0 +1,21 @@
+body{
+    background-color:beige;
+}
+img {
+    width: 200px;
+    height: 200px;
+    padding: 5px;
+    grid: auto;
+}
+#main-header{
+    font-size: 50px;
+}
+#searchbar{
+    float:right;
+
+}
+.grid-container{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
