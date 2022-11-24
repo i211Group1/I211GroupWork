@@ -1,6 +1,6 @@
 <?php
 /**
- * Author: Luke Erny
+ * Author: Luke Erny and Josh Tuffnell
  * Date: 11/10/2022
  * File: index_view.class.php
  * Description: File that displays the header and footer for every page
@@ -28,6 +28,7 @@ class IndexView
     }
     static public function displayFooter()
     {
+
         ?>
         </body>
         </html>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Author: Jennifer Baldwin
+ * Author: Jennifer Baldwin and Josh Tuffnell
  * Date: 11/10/2022
  * File: game_detail.class.php
  * Description: definition for GameDetail class
@@ -35,7 +35,7 @@ class GameDetail extends GameIndexView {
                         "'></a><span><br>$title<br>Publisher: $publisher<br>" ."Retail:". $price . "<br>Genre: ". $genre ."</span></p></div>";
 ?>
 
-        <div class="grid-container">
+
         <a href="<?= BASE_URL ?>/game/index">Go to game list</a>
 <?php
     }

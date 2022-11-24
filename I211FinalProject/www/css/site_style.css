@@ -1,3 +1,9 @@
+/*
+ * Author: Josh Tuffnell
+ * Date: Nov 21 2022
+ * Name: site_style.css
+ * Description: style sheet for displaying games and pages
+ */
 body{
     background-color:beige;
 }
@@ -5,10 +11,12 @@ img {
     width: 200px;
     height: 200px;
     padding: 5px;
-    grid: auto;
 }
 #main-header{
     font-size: 50px;
+    background-color:crimson;
+    border-color: black;
+    height: 100px;
 }
 #searchbar{
     float:right;
@@ -16,6 +24,9 @@ img {
 }
 .grid-container{
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-
+    grid-template-columns: 250px 250px 250px;
 }
+#searchtextbox{
+    width:250px;
+}
+
