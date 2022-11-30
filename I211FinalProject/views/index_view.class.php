@@ -30,7 +30,11 @@ class IndexView
     {
 
         ?>
+        <div id="footer">
+            <p>IUPUI 2022<br>Project Created by Luke Erny, Josh Tuffnell, John Ross Richardson, and Jennifer Baldwin.</p>
+        <br>
         </body>
+        </div>
         </html>
         <!--    footer view goes here    -->
         <?php
