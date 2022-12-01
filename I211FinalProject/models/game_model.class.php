@@ -12,6 +12,7 @@ class GameModel
      * @var
      */
     private static $_instance;
+
     //private data members
     private $db;
     private $dbConnection;
@@ -88,18 +89,15 @@ class GameModel
             //loop through all rows in the returned recordsets
             while ($obj = $query->fetch_object()) {
                 $game = new Game(
-//                stripslashes($obj->game_id),
-                    stripslashes($obj->game_name),
-                    stripslashes($obj->genre_name),
-                    stripslashes($obj->publisher_name),
-                    stripslashes($obj->description),
-                    stripslashes($obj->price),
-                    stripslashes($obj->image)
-                );
-
-                //set the id for the movie
-//            $game->setGameId($obj->id);
-                //game_id is auto incremented, no need to set it. --Jen
+                stripslashes($obj->game_name),
+                stripslashes($obj->genre_name),
+                stripslashes($obj->publisher_name),
+                stripslashes($obj->description),
+                stripslashes($obj->price),
+                stripslashes($obj->image)
+            );
+            //set the id for the game
+            $game->setGameId($obj->game_id);
 
                 //add the movie into the array
                 $games[] = $game;
@@ -229,8 +227,8 @@ class GameModel
             while ($obj = $query->fetch_object()) {
                 $game = new Game($obj->game_name, $obj->genre_id, $obj->publisher_id, $obj->description, $obj->price, $obj->image);
 
-                //set the id for the movie
-                $game->setGameId($obj->id);
+            //set the id for the game
+            $game->setGameId($obj->game_id);
 
                 //add the movie into the array
                 $games[] = $game;
