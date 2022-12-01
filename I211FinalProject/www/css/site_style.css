@@ -4,17 +4,14 @@
  * Name: site_style.css
  * Description: style sheet for displaying games and pages
  */
-body{
-    background-color:beige;
-}
 img {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     padding: 5px;
 }
 #main-header{
     font-size: 50px;
-    background-color:crimson;
+    background-color:lightgray;
     border-color: black;
     height: 100px;
 }
@@ -24,9 +21,14 @@ img {
 }
 .grid-container{
     display:grid;
-    grid-template-columns: 250px 250px 250px;
+    grid-template-columns: 25% 25% 25% 25%;
+    padding: 10px;
+
 }
 #searchtextbox{
-    width:250px;
+    width:200px;
+}
+#footer{
+    background-color: lightgray;
 }
 
