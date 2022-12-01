@@ -20,7 +20,7 @@ class GameIndexView extends IndexView {
         <!--create the search bar -->
         <div id="searchbar">
             <form method="get" action="<?= BASE_URL ?>/game/search">
-                <input type="text" name="query-terms" id="searchtextbox" placeholder="Search game by title" autocomplete="off" onkeyup="handleKeyUp(event)">
+                <input type="text" name="query-terms" id="searchtextbox" placeholder="Search games by title" autocomplete="off" onkeyup="handleKeyUp(event)">
                 <input type="submit" value="Search" />
             </form>
             <div id="suggestionDiv"></div>
