@@ -1,0 +1,60 @@
+@font-face {
+  font-family: SUIsemiLite;
+  src: url("/css/fonts/segoeuisl.ttf");
+}
+@font-face {
+  font-family: SUIbold;
+  src: url("/css/fonts/segoeuib.ttf");
+}
+* {
+  margin:0;
+  padding:0;
+  box-sizing: borderbox;
+  // border: red solid 1px;
+}
+html,body {
+ height: 100%
+}
+h1, h2, h3, h4, h5, h6, p {
+ margin-bottom: 16px
+}
+.border{
+  margin: 0 auto;
+  width: 1100px;
+  
+  // background-color: blue;
+  // height: 55px;
+}
+
+.font{
+  &SUI{
+    &semiLite{
+      font-family: SUIsemiLite;
+    }
+    &bold{
+      font-family: SUIbold;
+    }
+  }
+  
+  
+  &Color{
+    &WHT{
+      color: $siteWhite;
+    }
+    &GRY{
+      color: $siteGrey;
+    }
+  }
+  &Size{
+    &XXL{
+      font-size: 30px;
+    }
+    &XLg{
+      font-size: 25px;
+    }
+    &XSm{
+      font-size: 14px;
+    }
+
+  }
+}

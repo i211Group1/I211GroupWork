@@ -13,15 +13,18 @@ class IndexView
     static public function displayHeader($page_title)
     {
         ?>
-        <!--    header view goes here    -->
         <!DOCTYPE html>
         <html>
         <head>
             <meta charset="UTF-8">
             <title>IUPUI Game Rental</title>
-            <link href="www/css/site_style.css" rel="stylesheet" type="text/css"/>
+            <!-- Josh's css sheet-->
+                <link href="www/css/site_style.css" rel="stylesheet" type="text/css"/>
+            <!-- Jennifer's scss stylesheet-->
+            <!--    <link href="www/css/styles.css" rel="stylesheet" type="text/css"/>-->
         </head>
         <body>
+        <!--    header view goes here    -->
 
 
         <?php

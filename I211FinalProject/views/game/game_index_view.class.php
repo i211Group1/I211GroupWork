@@ -18,6 +18,7 @@ class GameIndexView extends IndexView {
             var media = "game";
         </script>
         <!--create the search bar -->
+        <!--Search bar will be moved to the nav bar-->
         <div id="searchbar">
             <form method="get" action="<?= BASE_URL ?>/game/search">
                 <input type="text" name="query-terms" id="searchtextbox" placeholder="Search game by title" autocomplete="off" onkeyup="handleKeyUp(event)">

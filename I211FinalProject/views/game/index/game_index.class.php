@@ -3,13 +3,14 @@
  * Author: Jon Ross Richardson and Jennifer Baldwin
  * Date:
  * Name: game_index.class.php
- * Description: This class defines a method called "display", which displays all movies.
+ * Description: This class defines a method called "display", which displays all games.
  */
 class GameIndex extends GameIndexView {
     /*
      * the display method accepts an array of movie objects and displays
      * them in a grid.
      */
+
 
     public function display($games) {
         //display page header

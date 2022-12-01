@@ -1,0 +1,33 @@
+header{
+    .redFullWidth{
+        width: 100vw;
+        .bright{
+            background-color: $BrightRed;
+            height: 5px;
+        }
+        .dull{
+            background-color: $DullRed;
+            height: 55px;
+        }
+    }
+    .headerMarg{
+        margin-top: -60px;
+        display: flex;
+        align-items: center;
+        // justify-content: space-evenly;
+        
+        .trident{
+            // background-color: red;
+            background-image: url("/assets/trident-large.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 60px;
+            height: 80px;
+        }
+        span{
+            margin-left: 15px;
+            margin-bottom: 20px;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+nav{
+    .upperNav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .leftInfo{
+            
+        }
+        
+    }
+    .navbar{
+        background-color: $BrightRed;
+
+        padding: 15px;
+        border-radius: 15px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .left, .right{
+            display: flex;
+            
+        }
+    }
+}

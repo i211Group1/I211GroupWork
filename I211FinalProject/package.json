@@ -1,0 +1,16 @@
+{
+  "name": "gamelib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "live server",
+    "compile:sass": "node-sass www/scss/styles.scss www/css/styles.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^8.0.0"
+  }
+}
