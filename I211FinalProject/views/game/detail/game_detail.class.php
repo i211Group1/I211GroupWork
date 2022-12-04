@@ -8,11 +8,11 @@
 
 class GameDetail extends GameIndexView {
 
-//    private $game;
-//
-//    public function __construct($game){
-//        $this->game = $game;
-//    }
+    private $game;
+
+    public function __construct($game){
+        $this->game = $game;
+    }
     public function display($game){
 
         //display page header

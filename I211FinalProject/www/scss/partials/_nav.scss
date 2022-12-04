@@ -4,15 +4,56 @@ nav{
         align-items: center;
         justify-content: space-between;
 
+        height: 75px;
+
+
         .leftInfo{
+            margin-top: -25px;
+            height: 
+            100%;
             
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-evenly;
+            flex-direction: column;
+            form{
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                
+                .searchBar{
+                    height: 30px;
+                    width:200px;
+                    margin-right: 0;
+                    border-radius: 15px 0px 0px 15px;
+                    border: solid 2px $DullRed;
+                }
+                .searchSubmit{
+                    width: 40px;
+                    height: 34px;
+                    margin-left: -5px;
+                    border-radius: 0px 15px 15px 0px;
+                    border: none;
+                    background-color: $DullRed;
+                }
+                
+            }
+            form:hover{
+                .searchBar{
+                    border: solid 2px $BrightRed;
+                }
+                .searchSubmit{
+                    background-color: $BrightRed
+                }
+            }
+
         }
         
     }
     .navbar{
         background-color: $BrightRed;
 
-        padding: 15px;
+        padding: 15px 30px;
         border-radius: 15px;
 
         display: flex;
@@ -21,7 +62,14 @@ nav{
 
         .left, .right{
             display: flex;
-            
+            a{
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+        .right{
+            width: 33%;
+            justify-content: space-between;
         }
     }
 }

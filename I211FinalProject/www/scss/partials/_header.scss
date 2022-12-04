@@ -14,11 +14,9 @@ header{
         margin-top: -60px;
         display: flex;
         align-items: center;
-        // justify-content: space-evenly;
         
         .trident{
-            // background-color: red;
-            background-image: url("/assets/trident-large.png");
+            background-image: url("../img/trident-large.png");
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;

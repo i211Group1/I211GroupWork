@@ -14,10 +14,23 @@ class GameIndex extends GameIndexView {
 
     public function display($games) {
         //display page header
-        parent::displayHeader("List of Games");
+        parent::displayHeader("Home");
 
         ?>
-        <div id="main-header"> Games in the Library</div>
+        <section class="border homeContent">
+            <div class="hero">
+                <div class="heroHeader fontSUIbold fontColorWHT">
+                    <h1 class="fontSizeMax">BORED?</h1>
+                    <h2 class="fontSizeMaxSmol">Search our board collection</h2>
+                </div>
+                <form>
+                    <input class="searchBar" type="text">
+                    <button class="searchSubmit fontColorWHT" type="submit">
+                        <i class="fa-solid fa-magnifying-glass" style="font-size: 18px;"></i></button>
+                </form>
+
+            </div>
+        <div id="main-header">All Games:</div>
 
         <div class="grid-container">
             <?php
@@ -43,7 +56,9 @@ class GameIndex extends GameIndexView {
                 }
             }
             ?>
-        </div>
+            </div>
+        </section>
+
 
         <?php
         //display page footer

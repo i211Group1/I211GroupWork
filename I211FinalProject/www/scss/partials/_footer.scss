@@ -1,0 +1,65 @@
+footer{
+    margin-top: 50px;
+    background-color: $siteBrown;
+    width: 100%;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    .col{
+        padding: 0 7%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-direction: column;
+        height:70%;
+        width: 33%;
+        .donations{ 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .libLogo{
+                height: 45px;
+                width: 60px;
+                background-image: url("../img/donate_window.png");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            p{
+                margin-bottom: 0;
+            }
+        }
+        .sub{
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-evenly;
+            flex-direction: column;
+            p{
+                margin-bottom: 0;
+            }
+        }
+        .socials{
+            padding-right: 30px;
+            display: flex;
+            justify-content: space-between;
+
+            i{
+                font-size: 28px;
+            }
+        }
+        section{
+            height: 45%;
+
+            p:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+    div:nth-child(2) {
+        border-left: 2px solid $siteWhite;
+        border-right: 2px solid $siteWhite;
+      }
+
+    
+}

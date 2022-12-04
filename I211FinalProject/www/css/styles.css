@@ -1,0 +1,221 @@
+@font-face {
+  font-family: SUIsemiLite;
+  src: url("/css/fonts/segoeuisl.ttf"); }
+
+@font-face {
+  font-family: SUIbold;
+  src: url("/css/fonts/segoeuib.ttf"); }
+
+@font-face {
+  font-family: SUIreg;
+  src: url("/css/fonts/segoeui.ttf"); }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: borderbox; }
+
+html, body {
+  height: 100%; }
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 16px; }
+
+.border {
+  margin: 0 auto;
+  width: 900px; }
+
+.fontSUIsemiLite {
+  font-family: SUIsemiLite; }
+
+.fontSUIbold {
+  font-family: SUIbold; }
+
+.fontSUIreg {
+  font-family: SUIreg; }
+
+.fontColorWHT {
+  color: #FFFFFF; }
+
+.fontColorGRY {
+  color: #707070; }
+
+.fontSizeMax {
+  font-size: 90px; }
+
+.fontSizeMaxSmol {
+  font-size: 60px; }
+
+.fontSizeXXL {
+  font-size: 30px; }
+
+.fontSizeXLg {
+  font-size: 25px; }
+
+.fontSizeXSm {
+  font-size: 14px; }
+
+header .redFullWidth {
+  width: 100vw; }
+  header .redFullWidth .bright {
+    background-color: #990000;
+    height: 5px; }
+  header .redFullWidth .dull {
+    background-color: #742222;
+    height: 55px; }
+
+header .headerMarg {
+  margin-top: -60px;
+  display: flex;
+  align-items: center; }
+  header .headerMarg .trident {
+    background-image: url("../img/trident-large.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 60px;
+    height: 80px; }
+  header .headerMarg span {
+    margin-left: 15px;
+    margin-bottom: 20px; }
+
+nav .upperNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 75px; }
+  nav .upperNav .leftInfo {
+    margin-top: -25px;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    flex-direction: column; }
+    nav .upperNav .leftInfo form {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end; }
+      nav .upperNav .leftInfo form .searchBar {
+        height: 30px;
+        width: 200px;
+        margin-right: 0;
+        border-radius: 15px 0px 0px 15px;
+        border: solid 2px #742222; }
+      nav .upperNav .leftInfo form .searchSubmit {
+        width: 40px;
+        height: 34px;
+        margin-left: -5px;
+        border-radius: 0px 15px 15px 0px;
+        border: none;
+        background-color: #742222; }
+    nav .upperNav .leftInfo form:hover .searchBar {
+      border: solid 2px #990000; }
+    nav .upperNav .leftInfo form:hover .searchSubmit {
+      background-color: #990000; }
+
+nav .navbar {
+  background-color: #990000;
+  padding: 15px 30px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  nav .navbar .left, nav .navbar .right {
+    display: flex; }
+    nav .navbar .left a, nav .navbar .right a {
+      text-decoration: none;
+      color: inherit; }
+  nav .navbar .right {
+    width: 33%;
+    justify-content: space-between; }
+
+footer {
+  margin-top: 50px;
+  background-color: #46302C;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly; }
+  footer .col {
+    padding: 0 7%;
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 70%;
+    width: 33%; }
+    footer .col .donations {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      footer .col .donations .libLogo {
+        height: 45px;
+        width: 60px;
+        background-image: url("www/img/donate_window.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover; }
+      footer .col .donations p {
+        margin-bottom: 0; }
+    footer .col .sub {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      flex-direction: column; }
+      footer .col .sub p {
+        margin-bottom: 0; }
+    footer .col .socials {
+      padding-right: 30px;
+      display: flex;
+      justify-content: space-between; }
+      footer .col .socials i {
+        font-size: 28px; }
+    footer .col section {
+      height: 45%; }
+      footer .col section p:hover {
+        text-decoration: underline; }
+  footer div:nth-child(2) {
+    border-left: 2px solid #FFFFFF;
+    border-right: 2px solid #FFFFFF; }
+
+.homeContent {
+  padding: 20px 0 70px; }
+  .homeContent .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("www/img/hero.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 80vh;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column; }
+    .homeContent .heroHeader {
+      margin-top: 50px; }
+      .homeContent .heroHeader h2 {
+        margin-top: -50px; }
+    .homeContent .hero form {
+      margin-bottom: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .homeContent .hero form .searchBar {
+        height: 40px;
+        width: 350px;
+        margin-right: 0;
+        border-radius: 20px 0px 0px 20px;
+        border: solid 3px #742222; }
+      .homeContent .hero form .searchSubmit {
+        width: 45px;
+        height: 46px;
+        margin-left: -5px;
+        border-radius: 0px 20px 20px 0px;
+        border: none;
+        background-color: #742222; }
+    .homeContent .hero form:hover .searchBar {
+      border: solid 2px #990000; }
+    .homeContent .hero form:hover .searchSubmit {
+      background-color: #990000; }

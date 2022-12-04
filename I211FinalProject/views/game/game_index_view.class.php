@@ -12,21 +12,47 @@ class GameIndexView extends IndexView {
     public static function displayHeader($title) {
         parent::displayHeader($title)
         ?>
+        <nav class="border">
+            <div class="upperNav fontSUIbold fontColorGRY ">
+                <span class="fontSizeXLg">University Game Library</span>
+                <div class="leftInfo">
+                    <span class="fontSizeXSm">Today's Hours: 8:00am-11:00pm</span>
+                    <!-- search bar here, add classes to  search inputs -->
+                    <form method="get" action="<?= BASE_URL ?>/game/search">
+                        <input class="searchBar" type="text" name="query-terms" id="searchtextbox" placeholder="Search games by title" autocomplete="off" onkeyup="handleKeyUp(event)">
+                        <button class="searchSubmit fontColorWHT" type="submit">
+                            <i class="fa-solid fa-magnifying-glass" style="font-size: 18px;"></i></button>
+                    </form>
+                    <!-- end of search bar -->
 
-        <script>
-            //the media type
-            var media = "game";
-        </script>
+                </div>
+            </div>
+            <div class="navbar fontColorWHT fontSUIbold">
+                <div class="left">
+                    <span>Welcome</span>
+                </div>
+                <div class="right">
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Games</a>
+                    <a href="#">Contact</a>
+                    <a href="#">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
         <!--create the search bar -->
         <!--Search bar will be moved to the nav bar-->
-        <div id="searchbar">
-            <form method="get" action="<?= BASE_URL ?>/game/search">
-                <input type="text" name="query-terms" id="searchtextbox" placeholder="Search games by title" autocomplete="off" onkeyup="handleKeyUp(event)">
-                <input type="submit" value="Search" />
-            </form>
-            <div id="suggestionDiv"></div>
-
-        </div>
+<!--        <div id="searchbar">-->
+<!--            <form method="get" action="--><?//= BASE_URL ?><!--/game/search">-->
+<!--                <input type="text" name="query-terms" id="searchtextbox" placeholder="Search games by title" autocomplete="off" onkeyup="handleKeyUp(event)">-->
+<!--                <input type="submit" value="Search" />-->
+<!--            </form>-->
+<!--            <div id="suggestionDiv"></div>-->
+<!---->
+<!--        </div>-->
         <?php
     }
 
