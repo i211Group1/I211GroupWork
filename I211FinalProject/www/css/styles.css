@@ -1,14 +1,14 @@
 @font-face {
   font-family: SUIsemiLite;
-  src: url("/css/fonts/segoeuisl.ttf"); }
+  src: url("fonts/segoeuisl.ttf"); }
 
 @font-face {
   font-family: SUIbold;
-  src: url("/css/fonts/segoeuib.ttf"); }
+  src: url("fonts/segoeuib.ttf"); }
 
 @font-face {
   font-family: SUIreg;
-  src: url("/css/fonts/segoeui.ttf"); }
+  src: url("fonts/segoeui.ttf"); }
 
 * {
   margin: 0;
@@ -133,30 +133,32 @@ footer {
   margin-top: 50px;
   background-color: #46302C;
   width: 100%;
-  height: 350px;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: space-evenly; }
   footer .col {
     padding: 0 7%;
     display: flex;
-    align-items: left;
+    align-items: flex-start;
     justify-content: space-between;
     flex-direction: column;
     height: 70%;
     width: 33%; }
     footer .col .donations {
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between; }
       footer .col .donations .libLogo {
         height: 45px;
         width: 60px;
-        background-image: url("www/img/donate_window.png");
+        background-image: url("../img/donate_window.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover; }
       footer .col .donations p {
+        width: 50%;
         margin-bottom: 0; }
     footer .col .sub {
       display: flex;
@@ -166,7 +168,7 @@ footer {
       footer .col .sub p {
         margin-bottom: 0; }
     footer .col .socials {
-      padding-right: 30px;
+      width: 80%;
       display: flex;
       justify-content: space-between; }
       footer .col .socials i {
@@ -182,7 +184,7 @@ footer {
 .homeContent {
   padding: 20px 0 70px; }
   .homeContent .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("www/img/hero.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/hero.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
