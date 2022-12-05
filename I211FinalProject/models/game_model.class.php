@@ -137,35 +137,6 @@ class GameModel
 
             if ($query && $query->num_rows > 0) {
 
-                //game_id isn't getting passed in.
-
-                /* tried creating an alternative was of object creation. Also doesn't work */
-
-                /*            //array to store all games
-                            $games = array();
-
-                            //loop through all rows
-                            while($query_row = $query->fetch_assoc()){
-
-                                //create game object
-                                $game = new Game(
-                //                    $query_row["game_id"],
-                                    $query_row["game_name"],
-                                    $query_row["genre_name"],
-                                    $query_row["publisher_name"],
-                                    $query_row["description"],
-                                    $query_row["price"],
-                                    $query_row["image"]
-                                );
-                                //pass game_id to game object
-                                $game->setGameId($query_row["game_id"]);
-
-                                //push the game into the array
-                                $games[]=$game;
-                            }
-                            return $games;*/
-
-                /*Original object creation by Jon*/
                 $obj = $query->fetch_object();
 
                 //create a game object
@@ -194,16 +165,17 @@ class GameModel
         }
     }
 
-    //search the database for movies that match words in titles. Return an array of movies if succeed; false otherwise.
+    //search the database for games that match words in titles. Return an array of games if successful; false otherwise.
     public function search_game($terms)
     {
         $terms = explode(" ", $terms); //explode multiple terms into an array
-        //select statement for AND serach
+        //select statement for AND search
         $sql = "SELECT * FROM " . $this->tblGame . "," . $this->tblGameGenre .
-            " WHERE " . $this->tblGmae . ".genre_id=" . $this->tblGameGenre . ".genre_id AND (1";
+            " WHERE " . $this->tblGame . ".genre_id=" . $this->tblGameGenre . ".genre_id AND (1";
+
 
         foreach ($terms as $term) {
-            $sql .= " AND title LIKE '%" . $term . "%'";
+            $sql .= " AND game_name LIKE '%" . $term . "%'";
         }
 
         $sql .= ")";
@@ -259,7 +231,7 @@ class GameModel
                 throw new DataTypeException("Missing Game fields. All Game fields are required please.");
             }
 
-            //retrieve data for the new movie; data are sanitized and escaped for security.
+            //retrieve data for the new game; data are sanitized and escaped for security.
             $game_name = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING)));
             $genre_id = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'rating', FILTER_SANITIZE_STRING)));
             $publisher_id = $this->dbConnection->real_escape_string(filter_input(INPUT_POST, 'release_date', FILTER_DEFAULT));

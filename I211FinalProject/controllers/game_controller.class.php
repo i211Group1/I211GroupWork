@@ -33,7 +33,7 @@ class GameController {
 
         if(!$game){
             //display an error
-            $message= "there was a problem display the game id='". $id. "'.";
+            $message= "there was a problem display the game  id='". $id. "'.";
             $this->error($message);
         }
 
