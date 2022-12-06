@@ -5,7 +5,7 @@
  * File: game_model.class.php
  * Description:
  */
-class user
+class User
 {
     //declare public variables
     private $user_id, $user_name, $user_address, $fName, $lName, $password, $email, $admin;
