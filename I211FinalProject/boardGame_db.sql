@@ -91,7 +91,7 @@ CREATE TABLE `inventory_games` (
 INSERT INTO `inventory_games` (`game_id`, `game_name`, `genre_id`, `publisher_id`, `minPlayer`, `maxPlayer`, `description`, `price`, `image`, `playTime`) VALUES
 (1, 'Monopoly', 1, 1, 2, 6, 'Buy, sell, dream, and scheme the way to riches with the Monopoly board game! ', 19.99, 'https://cdn.shopify.com/s/files/1/0169/6995/7440/products/C10090002_630509512638_main_20_Online_2000SQ_1024x1024.jpg?v=1650894210', 45),
 (2, 'Clue', 2, 1, 2, 8, 'The mystery you love to solve again and again is even more intense! ', 11.99, 'https://i5.walmartimages.com/asr/d5449a01-b3a9-40c4-8bad-17a116d1043e_1.71becdfe4cc9920db3b1a2610a267301.jpeg', 60),
-(3, 'Risk', 1, 1, NULL, NULL, 'Take over the world in this game of strategy conquest, now with updated figures and improved Mission cards.', 33.99, 'https://www.hasbro.com/common/productimages/en_US/2C7C6F5250569047F5DDEB8AC273BA4C/1B45E578B86B4A0FAB6E88D8D82C7FDF.jpg', 120),
+(3, 'Risk', 1, 1, 2, 8, 'Take over the world in this game of strategy conquest, now with updated figures and improved Mission cards.', 33.99, 'https://www.hasbro.com/common/productimages/en_US/2C7C6F5250569047F5DDEB8AC273BA4C/1B45E578B86B4A0FAB6E88D8D82C7FDF.jpg', 120),
 (4, 'Mystery of the Abbey', 2, 2, 2, 8, 'Mystery of the Abbey is a new kind of "whodunit" game of deduction and intuition, set in a medieval abbey. Players compete and collaborate to solve the mystery', 85, 'https://cf.geekdo-images.com/OAZmWQ4u4Sda-3lUyMVxQw__opengraph/img/Jr-WK_GRGtABLaz_KJjDjr88krc=/fit-in/1200x630/filters:strip_icc()/pic897161.jpg', 45),
 (5, 'The Worst Case Scenario', 3, 3, 3, 5, 'How do you compare living through a pandemic to being chased by a gorilla or locked in the trunk of a moving car or losing your memory or being lost at sea? ', 19.99, 'https://target.scene7.com/is/image/Target/GUEST_03d8f4e2-1645-4995-be96-b00f84506c04?wid=488&hei=488&fmt=pjpeg', 15),
 (6, 'Ticket to Ride', 4, 2, 2, 5, 'Ticket to Ride is a cross-country train adventure in which players collect and play matching train cards to claim railway routes connecting cities throughout North America.', 39.97, 'https://m.media-amazon.com/images/I/91YNJM4oyhL.jpg', 120),
@@ -157,19 +157,20 @@ CREATE TABLE `user` (
   `f_name` varchar(64) NOT NULL,
   `l_name` varchar(64) NOT NULL,
   `password` varchar(64) NOT NULL,
-  `email` varchar(64) NOT NULL
+  `email` varchar(64) NOT NULL,
+  `admin` boolean not NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `user_name`, `user_address`, `f_name`, `l_name`, `password`, `email`) VALUES
-(1, 'LuckyCharmz', 'address', 'Jon', 'Richardson', 'password1234', 'richjonr@iu.edu'),
-(2, 'CaptainCrunch', 'The Sea', 'Morgan', 'Spice', 'passwordCaptain', 'CaptainCrunch@gmail.com'),
-(3, 'Taurine', 'Somewhere', 'Jenn', 'Froth', 'password2345', 'jennFroth@gmail.com'),
-(4, 'Siri', 'IUPUI', 'Apple', 'Jobs', 'steve', 'apple@apple.com'),
-(5, 'blackjack', 'vegas', 'Terry', 'Benedict', 'Bellagio', 'tbenedict@bellagio.com');
+INSERT INTO `user` (`user_id`, `user_name`, `user_address`, `f_name`, `l_name`, `password`, `email`,`admin`) VALUES
+(1, 'LuckyCharmz', 'address', 'Jon', 'Richardson', 'password1234', 'richjonr@iu.edu','1'),
+(2, 'CaptainCrunch', 'The Sea', 'Morgan', 'Spice', 'passwordCaptain', 'CaptainCrunch@gmail.com','0'),
+(3, 'Taurine', 'Somewhere', 'Jenn', 'Froth', 'password2345', 'jennFroth@gmail.com','0'),
+(4, 'Siri', 'IUPUI', 'Apple', 'Jobs', 'steve', 'apple@apple.com','0'),
+(5, 'blackjack', 'vegas', 'Terry', 'Benedict', 'Bellagio', 'tbenedict@bellagio.com','0');
 
 --
 -- Indexes for dumped tables

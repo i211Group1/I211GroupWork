@@ -13,7 +13,7 @@ class GameDetail extends GameIndexView {
 //    public function __construct($game){
 //        $this->game = $game;
 //    }
-    public function display($game, $confirm){
+    public function display($game){
 
         //display page header
         parent::displayHeader("Game Details");
