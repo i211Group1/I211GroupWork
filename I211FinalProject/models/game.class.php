@@ -8,14 +8,17 @@
 
 class Game
 {
-    private $game_id, $game_name, $genre, $publisher, $description, $price, $image;
+    private $game_id, $game_name, $genre, $publisher, $description, $price, $playerMin, $playerMax, $playTime, $image;
 
-    public function __construct( $game_name, $genre, $publisher, $description, $price, $image)
+    public function __construct( $game_name, $genre, $publisher, $description, $price, $playerMin, $playerMax, $playTime, $image)
     {
         $this->game_name = $game_name;
         $this->genre = $genre;
         $this->publisher = $publisher;
         $this->description = $description;
+        $this->playerMin = $playerMin;
+        $this->playerMax = $playerMax;
+        $this->playTime = $playTime;
         $this->price = $price;
         $this->image = $image;
     }
@@ -58,7 +61,21 @@ class Game
     {
         return $this->price;
     }
-
+    //get playerMin
+    public function getPlayerMin()
+    {
+        return $this->playerMin;
+    }
+    //get playerMax
+    public function getPlayerMax()
+    {
+        return $this->playerMax;
+    }
+    //get playTime
+    public function getPlayTime()
+    {
+        return $this->playTime;
+    }
     //get image
     public function getImage()
     {
@@ -66,47 +83,52 @@ class Game
     }
 
 
-
-
     /** Setters */
-
     //set the game ID
     public function setGameId($game_id)
     {
         $this->game_id = $game_id;
     }
-
     // set the Game Name
     public function setGameName($game_name)
     {
         $this->game_name = $game_name;
     }
-
     // set the Genre
-
     public function setGenre($genre)
     {
         $this->genre = $genre;
     }
-
     //set publisher
     public function setPublisher($publisher)
     {
         $this->publisher = $publisher;
     }
-
     //set description
     public function setDescription($description)
     {
         $this->description = $description;
     }
-
     //set price
     public function setPrice($price)
     {
         $this->price = $price;
     }
-
+    //set playerMin
+    public function setPlayerMin($playerMin)
+    {
+        $this->playerMin = $playerMin;
+    }
+    //set playerMax
+    public function setPlayerMax($playerMax)
+    {
+        $this->playerMax = $playerMax;
+    }
+    //set playTime
+    public function setPlayTime($playTime)
+    {
+        $this->playTime = $playTime;
+    }
     // set image
     public function setImage($image)
     {

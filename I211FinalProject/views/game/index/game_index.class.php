@@ -30,9 +30,9 @@ class GameIndex extends GameIndexView {
                 </form>
 
             </div>
-        <div id="main-header">All Games:</div>
-
-        <div class="grid-container">
+        <section class="border searchResults">
+            <h1 class="searchFieldHader fontColorGRY fontSUIreg">All Games:</h1>
+            <div class="searchField">
             <?php
             if ($games === 0) {
                 echo "No Game was found.<br><br><br><br><br>";
@@ -49,6 +49,19 @@ class GameIndex extends GameIndexView {
                     if (strpos($image, "http://") === false AND strpos($image, "https://") === false) {
                         $image = BASE_URL . "/" . GAME_IMG . $image;
                     }
+
+                    echo"   <div class='gamebox'>
+                                <a href='", BASE_URL, "/game/detail/$id'>
+                                <img src='".$image."' alt='image of ". $title ."'>
+                                <div class='gameInfo fontSUIreg'>
+                                    <h1 class=' fontSizeMed'>$title</h1>
+                                    <div class='playInfo fontSizeXSm'>
+                                        <div class='playTime'>$playTime</div>
+                                        <div class='playerCount'>$playerMin-$playerMax players</div>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>";
 
                     echo "<div class='grid-item'><p><a href='", BASE_URL, "/game/detail/$id'><img src='" . $image .
                         "'></a><span><br>$title<br>Publisher: $publisher<br>" ."Retail:". $price . "<br>Genre: ". $genre ."</span></p></div>";

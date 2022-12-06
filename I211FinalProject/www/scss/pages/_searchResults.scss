@@ -1,0 +1,38 @@
+.searchResults{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 75px;
+
+    .searchField{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    
+        flex-wrap: wrap;
+
+        .gamebox{
+            width: 30%;
+
+            img{
+                width: 100%;
+                border-radius: 15px
+
+            }
+            .gameInfo{
+
+                h1{
+                    margin-bottom: 0;
+                }
+
+                .playInfo{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+
+
+
+}

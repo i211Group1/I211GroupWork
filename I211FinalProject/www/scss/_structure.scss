@@ -1,21 +1,23 @@
 @font-face {
   font-family: SUIsemiLite;
-  src: url("fonts/segoeuisl.ttf");
+  src: url("/css/fonts/segoeuisl.ttf");
 }
 @font-face {
   font-family: SUIbold;
-  src: url("fonts/segoeuib.ttf");
+  src: url("/css/fonts/segoeuib.ttf");
 }
 @font-face {
   font-family: SUIreg;
-  src: url("fonts/segoeui.ttf");
+  src: url("/css/fonts/segoeui.ttf");
 }
 * {
   margin:0;
   padding:0;
   box-sizing: borderbox;
-   //border: red solid 1px;
-
+  // border: red solid 1px;
+  
+  
+  
 
 }
 html,body {
@@ -61,6 +63,12 @@ h1, h2, h3, h4, h5, h6, p {
     }
     &XLg{
       font-size: 25px;
+    }
+    &Lg{
+      font-size:20px;
+    }
+    &Med{
+      font-size: 18px;
     }
     &XSm{
       font-size: 14px;
