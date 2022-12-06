@@ -19,11 +19,15 @@ class GameDetail extends GameIndexView {
         parent::displayHeader("Game Details");
 
         //retrieve game details
-        $id = $game->getGameID();
+        $id = $game->getGameId();
         $title = $game->getGameName();
         $genre = $game->getGenre();
         $publisher = $game->getPublisher();
         $price = $game->getPrice();
+        $minPlayer = $game->getMinPlayer();
+        $maxPlayer = $game->getMaxPlayer();
+        $playTime = $game->getPlayTime();
+        $description = $game->getDescription();
         $image = $game->getImage();
 
         echo "$id";

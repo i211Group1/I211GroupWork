@@ -94,8 +94,8 @@ class GameModel
                 stripslashes($obj->publisher_name),
                 stripslashes($obj->description),
                 stripslashes($obj->price),
-                stripslashes($obj->playerMin),
-                stripslashes($obj->playerMax),
+                stripslashes($obj->minPlayer),
+                stripslashes($obj->maxPlayer),
                 stripslashes($obj->playTime),
                 stripslashes($obj->image)
             );
@@ -149,6 +149,9 @@ class GameModel
                     stripslashes($obj->publisher_name),
                     stripslashes($obj->description),
                     stripslashes($obj->price),
+                    stripslashes($obj->minPlayer),
+                    stripslashes($obj->maxPlayer),
+                    stripslashes($obj->price),
                     stripslashes($obj->image)
                 );
 
@@ -200,7 +203,16 @@ class GameModel
 
             //loop through all rows in the returned recordsets
             while ($obj = $query->fetch_object()) {
-                $game = new Game($obj->game_name, $obj->genre_id, $obj->publisher_id, $obj->description, $obj->price, $obj->image);
+                $game = new Game(
+                    $obj->game_name,
+                    $obj->genre_id,
+                    $obj->publisher_id,
+                    $obj->description,
+                    $obj->price,
+                    $obj->minPlayer,
+                    $obj->maxPlayer,
+                    $obj->price,
+                    $obj->image);
 
             //set the id for the game
             $game->setGameId($obj->game_id);
@@ -227,6 +239,9 @@ class GameModel
                 !filter_has_var(INPUT_POST, 'genre_id') ||
                 !filter_has_var(INPUT_POST, 'publisher_id') ||
                 !filter_has_var(INPUT_POST, 'description') ||
+                !filter_has_var(INPUT_POST, 'minPlayer') ||
+                !filter_has_var(INPUT_POST, 'maxPlayer') ||
+                !filter_has_var(INPUT_POST, 'playTime') ||
                 !filter_has_var(INPUT_POST, 'price') ||
                 !filter_has_var(INPUT_POST, 'image')) {
 
@@ -235,17 +250,20 @@ class GameModel
             }
 
             //retrieve data for the new game; data are sanitized and escaped for security.
-            $game_name = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING)));
-            $genre_id = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'rating', FILTER_SANITIZE_STRING)));
-            $publisher_id = $this->dbConnection->real_escape_string(filter_input(INPUT_POST, 'release_date', FILTER_DEFAULT));
-            $description = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'director', FILTER_SANITIZE_STRING)));
-            $price = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'image', FILTER_SANITIZE_STRING)));
-            $image = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING)));
+            $game_name = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'game_name', FILTER_SANITIZE_STRING)));
+            $genre_id = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'genre_id', FILTER_SANITIZE_STRING)));
+            $publisher_id = $this->dbConnection->real_escape_string(filter_input(INPUT_POST, 'publisher_id', FILTER_DEFAULT));
+            $description = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING)));
+            $minPlayer = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'minPlayer', FILTER_SANITIZE_STRING)));
+            $maxPlayer = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'maxPlayer', FILTER_SANITIZE_STRING)));
+            $playTime = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'playTime', FILTER_SANITIZE_STRING)));
+            $price = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'price', FILTER_SANITIZE_STRING)));
+            $image = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'image', FILTER_SANITIZE_STRING)));
 
 
             //query string for update
             $sql = "UPDATE " . $this->tblGame .
-                " SET game_name='$game_name', genre_id='$genre_id', publisher='$publisher_id', description='$description', "
+                " SET game_name='$game_name', genre_id='$genre_id', publisher='$publisher_id', description='$description',  minPlayer='$minPlayer',  maxPlayer='$maxPlayer',  playTime='$playTime', "
                 . "price='$price', image='$image' WHERE id='$id'";
 
             //execute the query
@@ -261,7 +279,7 @@ class GameModel
         }catch(DatabaseExecutionException $e) {
             $view = new GameError();
             $view->display($e->getMessage());
-        }catch (DatabaseConnectionException $e){
+        }catch (DataTypeException $e){
             $view = new GameError();
             $view->display($e->getMessage());
         } catch (Exception $e) {

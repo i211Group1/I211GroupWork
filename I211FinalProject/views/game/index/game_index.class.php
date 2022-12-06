@@ -41,9 +41,12 @@ class GameIndex extends GameIndexView {
                 foreach ($games as $game) {
                     $id = $game->getGameID();
                     $title = $game->getGameName();
-                    $genre = $game->getGenre();
-                    $publisher = $game->getPublisher();
-                    $price = $game->getPrice();
+//                    $genre = $game->getGenre();
+//                    $publisher = $game->getPublisher();
+                    $minPlayer = $game->getMinPlayer();
+                    $maxPlayer = $game->getMaxPlayer();
+                    $playTime = $game->getPlayTime();
+//                    $price = $game->getPrice();
                     $image = $game->getImage();
 
                     if (strpos($image, "http://") === false AND strpos($image, "https://") === false) {
@@ -52,19 +55,16 @@ class GameIndex extends GameIndexView {
 
                     echo"   <div class='gamebox'>
                                 <a href='", BASE_URL, "/game/detail/$id'>
-                                <img src='".$image."' alt='image of ". $title ."'>
-                                <div class='gameInfo fontSUIreg'>
-                                    <h1 class=' fontSizeMed'>$title</h1>
-                                    <div class='playInfo fontSizeXSm'>
-                                        <div class='playTime'>$playTime min</div>
-                                        <div class='playerCount'>$playerMin-$playerMax players</div>
+                                    <img src='".$image."' alt='image of ". $title ."'>
+                                    <div class='gameInfo fontSUIreg'>
+                                        <h1 class=' fontSizeMed'>$title</h1>
+                                        <div class='playInfo fontSizeXSm'>
+                                            <div class='playTime'>$playTime min</div>
+                                            <div class='playerCount'>$minPlayer-$maxPlayer players</div>
+                                        </div>
                                     </div>
-                                </div>
                                 </a>
                             </div>";
-
-                    echo "<div class='grid-item'><p><a href='", BASE_URL, "/game/detail/$id'><img src='" . $image .
-                        "'></a><span><br>$title<br>Publisher: $publisher<br>" ."Retail:". $price . "<br>Genre: ". $genre ."</span></p></div>";
 
                 }
             }
