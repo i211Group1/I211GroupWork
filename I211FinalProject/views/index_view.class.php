@@ -1,6 +1,6 @@
 <?php
 /**
- * Author: Luke Erny and Josh Tuffnell
+ * Author: Luke Erny and Josh Tuffnell and Jennifer Baldwin
  * Date: 11/10/2022
  * File: index_view.class.php
  * Description: File that displays the header and footer for every page
@@ -20,13 +20,14 @@ class IndexView
             <title>IUPUI Game Rental</title>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
             <!-- Josh's css sheet-->
-                <link href="www/css/site_style.css" rel="stylesheet" type="text/css"/>
-            <!-- Jennifer's scss stylesheet-->
-                <link href="www/css/styles.css" rel="stylesheet" type="text/css"/>
+<!--                <link href="www/css/site_style.css" rel="stylesheet" type="text/css"/>-->
+
             <script>
                 //create the JavaScript variable for the base url
                 var base_url = "<?= BASE_URL ?>";
             </script>
+            <!-- Jennifer's scss stylesheet-->
+            <link href="<?= BASE_URL ?>/www/css/styles.css" rel="stylesheet" type="text/css"/>
         </head>
         <body>
         <!--    header view goes here    -->

@@ -8,12 +8,12 @@
 
 class GameDetail extends GameIndexView {
 
-    private $game;
-
-    public function __construct($game){
-        $this->game = $game;
-    }
-    public function display($game){
+//    private $game;
+//
+//    public function __construct($game){
+//        $this->game = $game;
+//    }
+    public function display($game, $confirm){
 
         //display page header
         parent::displayHeader("Game Details");
@@ -38,6 +38,7 @@ class GameDetail extends GameIndexView {
         <?php echo "<div class='item'><p><a href='", BASE_URL, "/game/detail/$id'><img src='" . $image .
                         "'></a><span><br>$title<br>Publisher: $publisher<br>" ."Retail:". $price . "<br>Genre: ". $genre ."</span></p></div>";
 ?>
+<!--            con-->
 
 
         <a href="<?= BASE_URL ?>/game/index">Go to game list</a>

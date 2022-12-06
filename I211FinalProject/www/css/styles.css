@@ -236,13 +236,14 @@ footer {
     justify-content: space-between;
     flex-wrap: wrap; }
     .searchResults .searchField .gamebox {
-      width: 30%; }
-      .searchResults .searchField .gamebox img {
+      width: 28%;
+      margin-bottom: 50px; }
+      .searchResults .searchField .gamebox a img {
         width: 100%;
         border-radius: 15px; }
-      .searchResults .searchField .gamebox .gameInfo h1 {
+      .searchResults .searchField .gamebox a .gameInfo h1 {
         margin-bottom: 0; }
-      .searchResults .searchField .gamebox .gameInfo .playInfo {
+      .searchResults .searchField .gamebox a .gameInfo .playInfo {
         display: flex;
         align-items: center;
         justify-content: space-between; }
