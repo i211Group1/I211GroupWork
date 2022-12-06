@@ -56,7 +56,7 @@ class GameIndex extends GameIndexView {
                                 <div class='gameInfo fontSUIreg'>
                                     <h1 class=' fontSizeMed'>$title</h1>
                                     <div class='playInfo fontSizeXSm'>
-                                        <div class='playTime'>$playTime</div>
+                                        <div class='playTime'>$playTime min</div>
                                         <div class='playerCount'>$playerMin-$playerMax players</div>
                                     </div>
                                 </div>
