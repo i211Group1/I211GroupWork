@@ -38,7 +38,7 @@ class GameController {
         }
 
         //display movie details
-        $view = new GameDetail();
+        $view = new GameDetail($game);
         $view->display($game);
     }
     public function error($message){
@@ -84,7 +84,7 @@ class GameController {
         $game = array();
         if ($games) {
             foreach ($games as $game) {
-                $item[] = $games->getGame();
+                $item[] = $game->getGame();
             }
         }
 
@@ -121,7 +121,7 @@ class GameController {
         $confirm = "The game was updated successfully.";
         $item = $this->game_model->view_game($game_id);
 
-        $view = new GameDetail();
+        $view = new GameDetail($game_id);
         $view->display($item, $confirm);
     }
 }

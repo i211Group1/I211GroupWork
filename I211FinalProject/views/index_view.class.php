@@ -23,6 +23,10 @@ class IndexView
                 <link href="www/css/site_style.css" rel="stylesheet" type="text/css"/>
             <!-- Jennifer's scss stylesheet-->
                 <link href="www/css/styles.css" rel="stylesheet" type="text/css"/>
+            <script>
+                //create the JavaScript variable for the base url
+                var base_url = "<?= BASE_URL ?>";
+            </script>
         </head>
         <body>
         <!--    header view goes here    -->
@@ -94,6 +98,7 @@ class IndexView
 <!--        </div>-->
 <!--        </html>-->
         <!--    footer view goes here    -->
+
         <?php
     }
 }

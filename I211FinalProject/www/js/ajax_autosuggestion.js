@@ -1,5 +1,5 @@
 /**
- * Author:Josh Tuffnell & Luke Erny
+ * Author:Luke Erny
  * Date: 11/10/2022
  * File: game_detail.class.php
  * Description: handles AJAX methods
@@ -22,7 +22,7 @@ function createXmlHttpRequestObject() {
     }
 }
 
-//intial actions tot ake when the page loads
+//intial actions to take when the page loads
 window.onload = function () {
     xmlHttp = createXmlHttpRequestObject();
     //DOM objects
