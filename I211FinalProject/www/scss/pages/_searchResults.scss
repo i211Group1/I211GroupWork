@@ -12,22 +12,24 @@
 
         .gamebox{
             width: 30%;
+            a{
 
-            img{
-                width: 100%;
-                border-radius: 15px
+                img{
+                    width: 100%;
+                    border-radius: 15px
 
-            }
-            .gameInfo{
-
-                h1{
-                    margin-bottom: 0;
                 }
+                .gameInfo{
 
-                .playInfo{
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
+                    h1{
+                        margin-bottom: 0;
+                    }
+
+                    .playInfo{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
                 }
             }
         }

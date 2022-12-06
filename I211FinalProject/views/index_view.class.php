@@ -87,7 +87,7 @@ class IndexView
                     <p>Luke Erny</p>
                     <p>John Ross Richardson</p>
                     <p>Jennifer Baldwin</p>
-                    <p>Josh Tuffnell</p>
+<!--                    <p>Josh Tuffnell</p>-->
                 </section>
             </div>
         </footer>

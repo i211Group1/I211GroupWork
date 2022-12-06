@@ -8,16 +8,16 @@
 
 class Game
 {
-    private $game_id, $game_name, $genre, $publisher, $description, $price, $playerMin, $playerMax, $playTime, $image;
+    private $game_id, $game_name, $genre, $publisher, $description, $price, $minPlayer, $maxPlayer, $playTime, $image;
 
-    public function __construct( $game_name, $genre, $publisher, $description, $price, $playerMin, $playerMax, $playTime, $image)
+    public function __construct( $game_name, $genre, $publisher, $description, $price, $minPlayer, $maxPlayer, $playTime, $image)
     {
         $this->game_name = $game_name;
         $this->genre = $genre;
         $this->publisher = $publisher;
         $this->description = $description;
-        $this->playerMin = $playerMin;
-        $this->playerMax = $playerMax;
+        $this->minPlayer = $minPlayer;
+        $this->maxPlayer = $maxPlayer;
         $this->playTime = $playTime;
         $this->price = $price;
         $this->image = $image;
@@ -61,15 +61,15 @@ class Game
     {
         return $this->price;
     }
-    //get playerMin
-    public function getPlayerMin()
+    //get minPlayer
+    public function getMinPlayer()
     {
-        return $this->playerMin;
+        return $this->minPlayer;
     }
-    //get playerMax
-    public function getPlayerMax()
+    //get maxPlayer
+    public function getMaxPlayer()
     {
-        return $this->playerMax;
+        return $this->maxPlayer;
     }
     //get playTime
     public function getPlayTime()
@@ -114,15 +114,15 @@ class Game
     {
         $this->price = $price;
     }
-    //set playerMin
-    public function setPlayerMin($playerMin)
+    //set minPlayer
+    public function setMinPlayer($minPlayer)
     {
-        $this->playerMin = $playerMin;
+        $this->minPlayer = $minPlayer;
     }
-    //set playerMax
-    public function setPlayerMax($playerMax)
+    //set maxPlayer
+    public function setMaxPlayer($maxPlayer)
     {
-        $this->playerMax = $playerMax;
+        $this->maxPlayer = $maxPlayer;
     }
     //set playTime
     public function setPlayTime($playTime)
