@@ -18,13 +18,13 @@ class GameEdit extends GameIndexView {
         $publisher = $game->getPublisher();
         $description = $game->getDescription();
         $price = $game->getPrice();
-        $playerMin = $game->getPlayerMax();
-        $playerMax = $game->getPlayerMin();
+        $playerMin = $game->getMaxPlayer();
+        $playerMax = $game->getMinPlayer();
         $playTime = $game->getPlayTime();
         $image = $game->getImage();
         ?>
 
-        <div id="main-header">Edit Game Details</div>
+        <div id="main-header" class="border">Edit Game Details</div>
 
         <!-- display product details in a form -->
         <form class="new-media"  action='<?= BASE_URL . "/game/update/" . $game_id ?>' method="post" style="border: 1px solid #bbb; margin-top: 10px; padding: 10px;">

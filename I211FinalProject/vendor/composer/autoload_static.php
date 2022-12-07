@@ -11,16 +11,23 @@ class ComposerStaticInite3e9c0b9db364f036517aa5d2400f8b1
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInite3e9c0b9db364f036517aa5d2400f8b1' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'DataMissingException' => __DIR__ . '/../..' . '/exceptions/data_missing_exception.class.php',
         'Database' => __DIR__ . '/../..' . '/application/database.class.php',
+        'DatabaseConnectionException' => __DIR__ . '/../..' . '/exceptions/database_connection_exception.class.php',
+        'DatabaseExecutionException' => __DIR__ . '/../..' . '/exceptions/database_execution_exception.class.php',
         'Dispatcher' => __DIR__ . '/../..' . '/application/dispatcher.class.php',
         'Game' => __DIR__ . '/../..' . '/models/game.class.php',
         'GameController' => __DIR__ . '/../..' . '/controllers/game_controller.class.php',
         'GameDetail' => __DIR__ . '/../..' . '/views/game/detail/game_detail.class.php',
+        'GameEdit' => __DIR__ . '/../..' . '/views/game/edit/game_edit.class.php',
         'GameError' => __DIR__ . '/../..' . '/views/game/error/game_error.class.php',
         'GameIndex' => __DIR__ . '/../..' . '/views/game/index/game_index.class.php',
         'GameIndexView' => __DIR__ . '/../..' . '/views/game/game_index_view.class.php',
         'GameModel' => __DIR__ . '/../..' . '/models/game_model.class.php',
+        'GameSearch' => __DIR__ . '/../..' . '/views/game/search/game_search.class.php',
         'IndexView' => __DIR__ . '/../..' . '/views/index_view.class.php',
+        'User' => __DIR__ . '/../..' . '/models/user.class.php',
+        'UserModel' => __DIR__ . '/../..' . '/models/user_model.class.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
