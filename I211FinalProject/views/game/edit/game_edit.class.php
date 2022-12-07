@@ -7,21 +7,21 @@
  */
 
 class GameEdit extends GameIndexView {
-    public function display($item) {
+    public function display($game) {
         //display page header
         parent::displayHeader("Edit Game");
 
         //retrieve game details by calling get methods
-        $game_id = $item->getGameId();
-        $game_name = $item->getGameName();
-        $genre = $item->getGenre();
-        $publisher = $item->getPublisher();
-        $description = $item->getDescription();
-        $price = $item->getPrice();
-        $playerMin = $item->getPlayerMax();
-        $playerMax = $item->getPlayerMin();
-        $playTime = $item->getPlayTime();
-        $image = $item->getImage();
+        $game_id = $game->getGameId();
+        $game_name = $game->getGameName();
+        $genre = $game->getGenre();
+        $publisher = $game->getPublisher();
+        $description = $game->getDescription();
+        $price = $game->getPrice();
+        $playerMin = $game->getPlayerMax();
+        $playerMax = $game->getPlayerMin();
+        $playTime = $game->getPlayTime();
+        $image = $game->getImage();
         ?>
 
         <div id="main-header">Edit Game Details</div>

@@ -13,7 +13,7 @@ class GameDetail extends GameIndexView {
 //    public function __construct($game){
 //        $this->game = $game;
 //    }
-    public function display($game){
+    public function display($game, $confirm){
 
         //display page header
         parent::displayHeader("Game Details");
@@ -30,18 +30,56 @@ class GameDetail extends GameIndexView {
         $description = $game->getDescription();
         $image = $game->getImage();
 
-        echo "$id";
 
 ?>
-        <div id="main-header"> <?php echo $title ?></div>
-
-        <?php echo "<div class='item'><p><a href='", BASE_URL, "/game/detail/$id'><img src='" . $image .
-                        "'></a><span><br>$title<br>Publisher: $publisher<br>" ."Retail:". $price . "<br>Genre: ". $genre ."</span></p></div>";
-?>
-<!--            con-->
 
 
-        <a href="<?= BASE_URL ?>/game/index">Go to game list</a>
+
+        <section class="border gameDetails fontColorBLK">
+            <div class="left">
+                <span><?php echo $confirm ?></span>
+                <h1 class="fontSUIbold"><?php echo $title ?></h1>
+                <?php echo"<img src='" . $image . "' alt='gamebox of " . $title . "'>" ?>
+
+            </div>
+            <div class="right">
+                <form action="">
+                    <div class="detail">
+                        <label for="playTime">Playtime:</label>
+                        <div class="gamedetail"><?php echo $playTime ?>min</div>
+                        <!-- <div class="gamedetail"><? $playTime?></div> -->
+                        <!-- <input type="text"> -->
+
+                    </div>
+                    <div class="detail">
+                        <label for="playerCount">Player count:</label>
+                        <div class="gamedetail"><?php echo $minPlayer ?>-<?php echo $maxPlayer ?></div>
+                        <!-- <input type="text"> -->
+                    </div>
+                    <div class="detail">
+                        <label for="genre">Genre:</label>
+                        <div class="gamedetail"><?php echo $genre ?></div>
+                        <!-- <input type="text"> -->
+                    </div>
+                    <div class="detail">
+                        <label for="publisher">Publisher:</label>
+                        <div class="gamedetail"><?php echo $publisher ?></div>
+                        <!-- <input type="text"> -->
+                    </div>
+                    <div class="detail">
+                        <label for="descripttion">Description:</label>
+                        <div class="gamedetail"><?php echo $description ?></div>
+                        <!-- <input type="text"> -->
+                    </div>
+                    <div class="options">
+                        <button id="editBtn" class="fontSUIbold fontColorWHT" onclick="window.location.href = '<?= BASE_URL ?>/game/edit/<?= $id ?>'">Edit</button>
+                    </div>
+
+                </form>
+                <a href="<?= BASE_URL ?>game/index" class="fontSUIbold fontColorGRY">back to home page</a>
+
+            </div>
+        </section>
 <?php
     }
 }

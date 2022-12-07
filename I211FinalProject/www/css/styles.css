@@ -25,6 +25,9 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0 auto;
   width: 900px; }
 
+a {
+  text-decoration: none; }
+
 .fontSUIsemiLite {
   font-family: SUIsemiLite; }
 
@@ -39,6 +42,9 @@ h1, h2, h3, h4, h5, h6, p {
 
 .fontColorGRY {
   color: #707070; }
+
+.fontColorBLK {
+  color: #000000; }
 
 .fontSizeMax {
   font-size: 90px; }
@@ -247,3 +253,45 @@ footer {
         display: flex;
         align-items: center;
         justify-content: space-between; }
+
+.gameDetails {
+  margin: 25px auto 75px;
+  display: flex;
+  justify-content: space-between; }
+  .gameDetails .left {
+    width: 50%; }
+    .gameDetails .left img {
+      width: 100%;
+      border-radius: 15px; }
+  .gameDetails .right {
+    width: 45%;
+    height: 500px;
+    display: flex;
+    flex-direction: column; }
+    .gameDetails .right form {
+      height: 500px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column; }
+      .gameDetails .right form .detail {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px; }
+        .gameDetails .right form .detail .label {
+          width: 30%; }
+        .gameDetails .right form .detail .gamedetail {
+          width: 70%; }
+      .gameDetails .right form .options {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: 30px; }
+        .gameDetails .right form .options #editBtn {
+          height: 50px;
+          padding: 10px 15px;
+          background-color: #742222;
+          border-radius: 15px;
+          border: none; }
+    .gameDetails .right a {
+      width: fit-content;
+      align-self: flex-end; }

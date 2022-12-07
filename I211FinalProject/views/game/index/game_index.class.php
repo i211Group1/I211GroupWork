@@ -54,9 +54,9 @@ class GameIndex extends GameIndexView {
                     }
 
                     echo"   <div class='gamebox'>
-                                <a href='", BASE_URL, "game/detail/$id'>
+                                <a href='", BASE_URL, "/game/detail/$id'>
                                     <img src='".$image."' alt='image of ". $title ."'>
-                                    <div class='gameInfo fontSUIreg'>
+                                    <div class='gameInfo fontSUIreg fontColorBLK'>
                                         <h1 class=' fontSizeMed'>$title</h1>
                                         <div class='playInfo fontSizeXSm'>
                                             <div class='playTime'>$playTime min</div>

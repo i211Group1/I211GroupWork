@@ -1,0 +1,65 @@
+.gameDetails{
+  margin: 25px auto 75px;
+
+  display: flex;
+  justify-content: space-between;
+
+
+  .left{
+    width: 50%;
+    // background-color: palevioletred;
+    img{
+      width: 100%;
+      border-radius: 15px;
+    }
+  }
+  .right{
+    width: 45%;
+    height: 500px;
+
+    display: flex;
+    flex-direction: column;
+
+    form{
+      height: 500px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      .detail{
+        display: flex;
+        justify-content: space-between;
+
+        margin-bottom: 5px;
+
+        .label{
+          width: 30%;
+        }
+        .gamedetail{
+          width: 70%;
+        }
+
+
+      }
+      .options{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: 30px;
+
+        #editBtn{
+          height:50px;
+          padding: 10px 15px;
+          background-color: $DullRed;
+          border-radius: 15px;
+          border: none;
+        }
+      }
+    }
+    a{
+      width: fit-content;
+      align-self: flex-end;
+    }
+  }
+
+}

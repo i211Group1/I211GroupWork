@@ -93,9 +93,9 @@ class GameController {
 
     public function edit($game_id) {
         //retrieve the specific game
-        $item = $this->game_model->view_game($game_id);
+        $game = $this->game_model->view_game($game_id);
 
-        if (!$item) {
+        if (!$game) {
             //display error
             $message = "There was an issues displaying the game id='". $game_id . "'.";
             $this->error($message);
@@ -103,7 +103,7 @@ class GameController {
         }
 
         $view = new GameEdit();
-        $view->display($item);
+        $view->display($game);
     }
 
     //update a game in the database

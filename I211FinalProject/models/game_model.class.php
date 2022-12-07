@@ -138,6 +138,11 @@ class GameModel
             //execute the query
             $query = $this->dbConnection->query($sql);
 
+            // if the query failed, return false.
+            if (!$query)
+                //return false;
+                throw new DatabaseExecutionException("Error encountered when executing the SQL query");
+
             if ($query && $query->num_rows > 0) {
 
                 $obj = $query->fetch_object();
@@ -158,8 +163,11 @@ class GameModel
                 //set the id for the game
                 $game->setGameId($obj->game_id);
 
+
+
                 return $game;
             }
+
 
             return false;
         }catch(DatabaseExecutionException $e){
