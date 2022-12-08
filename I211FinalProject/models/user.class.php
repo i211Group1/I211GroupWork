@@ -106,10 +106,10 @@ class User
     /**
      * @return mixed
      */
-    public function getPassword()
-    {
-        return $this->password;
-    }
+//    public function getPassword()
+//    {
+//        return $this->password;
+//    }
 
     /**
      * @param mixed $password

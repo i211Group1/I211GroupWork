@@ -69,7 +69,6 @@ class UserModel
 
                 //create a game object
                 $user = new User(
-                    stripslashes($obj->userID),
                     stripslashes($obj->userName),
                     stripslashes($obj->userAddress),
                     stripslashes($obj->firstName),
@@ -80,7 +79,7 @@ class UserModel
                 );
 
                 //set the id for the game
-                $user->setUserId($obj->game_id);
+                $user->setUserId($obj->userID);
 
                 return $user;
             }
@@ -88,10 +87,10 @@ class UserModel
 
             return false;
         }catch(DatabaseExecutionException $e){
-            $view = new GameError();
+            $view = new UserError();
             $view->display($e->getMessage());
         } catch (Exception $e) {
-            $view = new GameError();
+            $view = new UserError();
             $view->display($e->getMessage());
         }
     }

@@ -28,6 +28,7 @@ class ComposerStaticInite3e9c0b9db364f036517aa5d2400f8b1
         'IndexView' => __DIR__ . '/../..' . '/views/index_view.class.php',
         'User' => __DIR__ . '/../..' . '/models/user.class.php',
         'UserController' => __DIR__ . '/../..' . '/controllers/user_controller.class.php',
+        'UserDetail' => __DIR__ . '/../..' . '/views/user/detail/user_detail.class.php',
         'UserModel' => __DIR__ . '/../..' . '/models/user_model.class.php',
     );
 

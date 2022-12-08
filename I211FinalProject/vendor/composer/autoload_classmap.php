@@ -27,5 +27,6 @@ return array(
     'IndexView' => $baseDir . '/views/index_view.class.php',
     'User' => $baseDir . '/models/user.class.php',
     'UserController' => $baseDir . '/controllers/user_controller.class.php',
+    'UserDetail' => $baseDir . '/views/user/detail/user_detail.class.php',
     'UserModel' => $baseDir . '/models/user_model.class.php',
 );

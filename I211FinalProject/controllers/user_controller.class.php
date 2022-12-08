@@ -17,8 +17,10 @@ class UserController
         // create an instance of the GameModel class
         $this->user_model = new userModel();
     }
+
+    //show details of a game
     public function detail($user_id) {
-        //retrieve the specific game
+        //retrieve the specific user
         $user = $this->user_model->view_user($user_id);
 
         if(!$user){
@@ -28,10 +30,9 @@ class UserController
         }
 
         //display movie details
-        $view = new UserDetail($user);
+        $view = new UserDetail();
         $view->display($user);
     }
-
 
 
 }
