@@ -102,12 +102,12 @@ class IndexView
             </div>
             <div class="col">
                 <section class="sub">
-                    <p>Scholarshops</p>
+                    <p>Scholarships</p>
                     <p>Art at the Library</p>
                     <p>Special Collections</p>
                 </section>
                 <section class="sub">
-                    <p>Blah Blah Blah</p>
+                    <p>Sponsors</p>
                     <p>Other Links</p>
                     <p>Related things</p>
                 </section>
@@ -123,7 +123,7 @@ class IndexView
                     <p>Luke Erny</p>
                     <p>John Ross Richardson</p>
                     <p>Jennifer Baldwin</p>
-                    <p>Josh Tuffnell</p>-->
+                    <p>Josh Tuffnell</p>
                 </section>
             </div>
         </footer>
