@@ -34,5 +34,27 @@ class UserController{
         $view->display($user);
     }
 
+    //show error message
+    public function error($message){
+        //create an object of the Error Class
+        $error = new UserError();
+
+        //display the error page
+        $error->display($message);
+    }
+
+    //show register page
+    public function register(){
+        //display movie details
+        $view = new UserRegister();
+        $view->display();
+    }
+
+    //show login page
+    public function login(){
+        //display movie details
+        $view = new UserLogin();
+        $view->display();
+    }
 
 }

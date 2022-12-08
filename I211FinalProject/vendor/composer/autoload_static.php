@@ -29,8 +29,9 @@ class ComposerStaticInite3e9c0b9db364f036517aa5d2400f8b1
         'UserController' => __DIR__ . '/../..' . '/controllers/user_controller.class.php',
         'UserDetail' => __DIR__ . '/../..' . '/views/user/detail/user_detail.class.php',
         'UserError' => __DIR__ . '/../..' . '/views/user/error/user_error.class.php',
-        'UserIndexView' => __DIR__ . '/../..' . '/views/user/user_index_view.class.php',
+        'UserLogin' => __DIR__ . '/../..' . '/views/user/login/user_login.class.php',
         'UserModel' => __DIR__ . '/../..' . '/models/user_model.class.php',
+        'UserRegister' => __DIR__ . '/../..' . '/views/user/register/user_register.class.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

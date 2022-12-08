@@ -6,7 +6,7 @@
  * Description: define the GameError class. This display method displays an error message.
  */
 
-class UserError extends UserIndexView{
+class UserError extends IndexView{
     public function display($message){
 
         //display page header

@@ -81,39 +81,7 @@ class GameEdit extends IndexView {
         <a class="fontSUIbold fontColorGRY">back to home page</a>
         </section>
 
-
-
-        <!-- display product details in a form -->
-        <!--<form class="new-media"  action='<?/*= BASE_URL . "/game/update/" . $game_id */?>' method="post" style="border: 1px solid #bbb; margin-top: 10px; padding: 10px;">
-
-            <p><strong>Game</strong><br>
-                <input name="game" type="text" size="100" value="<?/*= $game_name */?>" required autofocus></p>
-
-            <p><strong>Genre</strong>:<br>
-                <textarea name="genre" rows="8" cols="100"><?/*= $genre */?></textarea></p>
-
-            <p><strong>Publisher</strong>:<br>
-                <textarea name="publisher" rows="8" cols="100"><?/*= $publisher */?></textarea></p>
-
-            <p><strong>Description</strong>:<br>
-                <textarea name="description" rows="8" cols="100"><?/*= $description */?></textarea></p>
-
-            <p><strong>Player Min</strong>:<br>
-                <textarea name="player_Min" rows="8" cols="100"><?/*= $playerMin */?></textarea></p>
-
-            <p><strong>Player Max</strong>:<br>
-                <textarea name="player_max" rows="8" cols="100"><?/*= $playerMax */?></textarea></p>
-
-            <p><strong>Play Time</strong>:<br>
-                <textarea name="play_time" rows="8" cols="100"><?/*= $playTime */?></textarea></p>
-
-            <p><strong>Image</strong>: url (http:// or https://) or local file including path and file extension<br>
-                <input name="image" type="text" size="100" required value="<?/*= $image */?>"></p>
-
-            <input type="submit" name="action" value="Update Game">
-            <input type="button" value="Cancel" onclick='window.location.href = "<?/*= BASE_URL . "/game/detail/" . $game_id */?>"'>
-        </form>
-        --><?php
+        <?php
         //display page footer
         parent::displayFooter();
     }

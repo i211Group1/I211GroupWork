@@ -15,12 +15,19 @@ class IndexView
         if (session_status() == PHP_SESSION_NONE) {
             session_start();
         }
-        $cart = 0;
 
-        //retrieve cart content
-        if(isset($_SESSION['cart'])){
-            $cart = $_SESSION['cart'];
-        }
+        //variables for a user’s login, name, and role
+        $login = '';
+        $name = '';
+        $user_id = '';
+        $role = 0;
+
+        //if the user has logged in, retrieve login, name, role, and user_id.
+        if (isset($_SESSION['login'])
+            AND isset($_SESSION['name'])
+            AND isset($_SESSION['role'])
+            AND isset($_SESSION['user_id'])
+        ) {}
         ?>
         <!DOCTYPE html>
         <html>
@@ -54,6 +61,7 @@ class IndexView
             <div class="upperNav fontSUIbold fontColorGRY ">
                 <span class="fontSizeXLg">University Game Library</span>
                 <div class="leftInfo">
+                    <span><a href="<?= BASE_URL ?>/user/login">Login</a> | <a href="<?= BASE_URL ?>/user/register">Register</a></span>
                     <span class="fontSizeXSm">Today's Hours: 8:00am-11:00pm</span>
                     <!-- search bar here, add classes to  search inputs -->
                     <form method="get" action="<?= BASE_URL ?>/game/search">

@@ -41,6 +41,8 @@ class GameController {
         $view = new GameDetail($game);
         $view->display($game);
     }
+
+    //show error message
     public function error($message){
         //create an object of the Error Class
         $error = new GameError();

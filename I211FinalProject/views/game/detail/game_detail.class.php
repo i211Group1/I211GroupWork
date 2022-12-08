@@ -68,5 +68,7 @@ class GameDetail extends IndexView {
             </div>
         </section>
 <?php
+        //display page footer
+        parent::displayFooter();
     }
 }

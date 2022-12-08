@@ -11,7 +11,7 @@ class UserDetail extends IndexView {
     public function display($user){
 
         //display page header
-        parent::displayHeader("Game Details");
+        parent::displayHeader("User Details");
 
         //retrieve game details
         $id = $user->getUserId();
@@ -30,7 +30,7 @@ class UserDetail extends IndexView {
         <section class="border gameDetails fontColorBLK">
             <div class="left">
                 <h1 class="fontSUIbold"><?php echo $firstName ?>'s Profile</h1>
-                <img src="../www/img/error.jpg" alt="falling dice">
+                <img src='<?= BASE_URL ?>/www/img/error.jpg' alt="falling dice">
 
             </div>
             <div class="right">
@@ -65,5 +65,7 @@ class UserDetail extends IndexView {
             </div>
         </section>
 <?php
+        //display page footer
+        parent::displayFooter();
     }
 }

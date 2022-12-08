@@ -263,11 +263,9 @@ class GameModel
 
             //query string for update
             $sql = "UPDATE " . $this->tblGame .
-                " SET game_name='$game_name', genre='$genre', publisher='$publisher', description='$description',  minPlayer='$minPlayer',  maxPlayer='$maxPlayer',  playTime='$playTime', "
-                . " image='$image' WHERE id='$id'";
+                " SET game_name='$game_name', genre='$genre', publisher='$publisher', description='$description',  minPlayer=$minPlayer,  maxPlayer=$maxPlayer,  playTime='$playTime', "
+                . " image='$image' WHERE game_id=$id";
 
-            //execute the query
-            //return $this->dbConnection->query($sql);
 
             $query = $this->dbConnection->query($sql);
 
