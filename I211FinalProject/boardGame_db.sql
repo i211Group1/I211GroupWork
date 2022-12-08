@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2022 at 06:48 AM
+-- Generation Time: Dec 08, 2022 at 07:45 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.8
 
@@ -54,17 +54,6 @@ CREATE TABLE `genre_tbl` (
   `genre_description` varchar(400) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `genre_tbl`
---
-
-INSERT INTO `genre_tbl` (`genre_id`, `genre_name`, `genre_description`) VALUES
-(1, 'Strategy', 'A strategy game or strategic game is a game (e.g. a board game) in which the players'' uncoerced, and often autonomous, decision-making skills have a high significance in determining the outcome.'),
-(2, 'Murder/Mystery', 'Murder/Mystery games often involve an unsolved murder or murders. A requirement of these games is usually for players to investigate these crimes, and determine the criminal details and/or perpetrator(s).'),
-(3, 'Role Playing Game (RPG)', 'A game in which each participant assumes the role of a character, generally in a fantasy or science fiction setting, that can interact within the game''s imaginary world.'),
-(4, 'Engine Building ', 'Consist of players having a set of resources personal to them that they will use to progress through the game. These resources usually include cards, tiles, and player boards. Players will use these resources in order to manipulate and build their personal components of the game.'),
-(5, 'Worker', 'These games tend to have a lot of resource management and worker placement in them. This is one of the board game types that tend to have less variance (luck) and is more focused on skilled play.');
-
 -- --------------------------------------------------------
 
 --
@@ -74,6 +63,8 @@ INSERT INTO `genre_tbl` (`genre_id`, `genre_name`, `genre_description`) VALUES
 CREATE TABLE `inventory_games` (
   `game_id` int(11) NOT NULL,
   `game_name` varchar(45) NOT NULL,
+  `genre` varchar(50) NOT NULL,
+  `publisher` varchar(50) NOT NULL,
   `genre_id` int(11) NOT NULL,
   `publisher_id` int(11) NOT NULL,
   `minPlayer` int(11) DEFAULT NULL,
@@ -88,15 +79,15 @@ CREATE TABLE `inventory_games` (
 -- Dumping data for table `inventory_games`
 --
 
-INSERT INTO `inventory_games` (`game_id`, `game_name`, `genre_id`, `publisher_id`, `minPlayer`, `maxPlayer`, `description`, `price`, `image`, `playTime`) VALUES
-(1, 'Monopoly', 1, 1, 2, 6, 'Buy, sell, dream, and scheme the way to riches with the Monopoly board game! ', 19.99, 'https://cdn.shopify.com/s/files/1/0169/6995/7440/products/C10090002_630509512638_main_20_Online_2000SQ_1024x1024.jpg?v=1650894210', 45),
-(2, 'Clue', 2, 1, 2, 8, 'The mystery you love to solve again and again is even more intense! ', 11.99, 'https://i5.walmartimages.com/asr/d5449a01-b3a9-40c4-8bad-17a116d1043e_1.71becdfe4cc9920db3b1a2610a267301.jpeg', 60),
-(3, 'Risk', 1, 1, 2, 8, 'Take over the world in this game of strategy conquest, now with updated figures and improved Mission cards.', 33.99, 'https://www.hasbro.com/common/productimages/en_US/2C7C6F5250569047F5DDEB8AC273BA4C/1B45E578B86B4A0FAB6E88D8D82C7FDF.jpg', 120),
-(4, 'Mystery of the Abbey', 2, 2, 2, 8, 'Mystery of the Abbey is a new kind of "whodunit" game of deduction and intuition, set in a medieval abbey. Players compete and collaborate to solve the mystery', 85, 'https://cf.geekdo-images.com/OAZmWQ4u4Sda-3lUyMVxQw__opengraph/img/Jr-WK_GRGtABLaz_KJjDjr88krc=/fit-in/1200x630/filters:strip_icc()/pic897161.jpg', 45),
-(5, 'The Worst Case Scenario', 3, 3, 3, 5, 'How do you compare living through a pandemic to being chased by a gorilla or locked in the trunk of a moving car or losing your memory or being lost at sea? ', 19.99, 'https://target.scene7.com/is/image/Target/GUEST_03d8f4e2-1645-4995-be96-b00f84506c04?wid=488&hei=488&fmt=pjpeg', 15),
-(6, 'Ticket to Ride', 4, 2, 2, 5, 'Ticket to Ride is a cross-country train adventure in which players collect and play matching train cards to claim railway routes connecting cities throughout North America.', 39.97, 'https://m.media-amazon.com/images/I/91YNJM4oyhL.jpg', 120),
-(7, 'Settlers of Catan', 5, 5, 2, 7, 'Players take on the roles of settlers, each attempting to build and develop holdings while trading and acquiring resources. Players gain victory points as their settlements grow.', 28.99, 'https://www.catan.com/sites/default/files/2021-06/dye_catan_150407_0564.jpg', 60),
-(8, 'Magic the Gathering', 1, 4, 1, 99, 'A player in Magic takes the role of a Planeswalker, a powerful wizard who can travel ("walk") between dimensions ("planes") of the Multiverse, doing battle with other players as Planeswalkers ', 49.99, 'https://media.gamestop.com/i/gamestop/11208572/Magic-The-Gathering-Arena-Starter-Kit-2022-', 45);
+INSERT INTO `inventory_games` (`game_id`, `game_name`, `genre`, `publisher`, `genre_id`, `publisher_id`, `minPlayer`, `maxPlayer`, `description`, `price`, `image`, `playTime`) VALUES
+(1, 'Monopoly', 'Strategy', 'Hasbro', 1, 1, 2, 6, 'Buy, sell, dream, and scheme the way to riches with the Monopoly board game! ', 19.99, 'https://cdn.shopify.com/s/files/1/0169/6995/7440/products/C10090002_630509512638_main_20_Online_2000SQ_1024x1024.jpg?v=1650894210', 45),
+(2, 'Clue', 'Murder/Mystery', 'Hasbro', 2, 1, 2, 8, 'The mystery you love to solve again and again is even more intense! ', 11.99, 'https://i5.walmartimages.com/asr/d5449a01-b3a9-40c4-8bad-17a116d1043e_1.71becdfe4cc9920db3b1a2610a267301.jpeg', 60),
+(3, 'Risk', 'Strategy', 'Hasbro', 1, 1, 2, 8, 'Take over the world in this game of strategy conquest, now with updated figures and improved Mission cards.', 33.99, 'https://www.hasbro.com/common/productimages/en_US/2C7C6F5250569047F5DDEB8AC273BA4C/1B45E578B86B4A0FAB6E88D8D82C7FDF.jpg', 120),
+(4, 'Mystery of the Abbey', 'Murder/Mystery', 'Days of Wonder', 2, 2, 2, 8, 'Mystery of the Abbey is a new kind of "whodunit" game of deduction and intuition, set in a medieval abbey. Players compete and collaborate to solve the mystery', 85, 'https://cf.geekdo-images.com/OAZmWQ4u4Sda-3lUyMVxQw__opengraph/img/Jr-WK_GRGtABLaz_KJjDjr88krc=/fit-in/1200x630/filters:strip_icc()/pic897161.jpg', 45),
+(5, 'The Worst Case Scenario', 'RPG', 'University Games', 3, 3, 3, 5, 'How do you compare living through a pandemic to being chased by a gorilla or locked in the trunk of a moving car or losing your memory or being lost at sea? ', 19.99, 'https://target.scene7.com/is/image/Target/GUEST_03d8f4e2-1645-4995-be96-b00f84506c04?wid=488&hei=488&fmt=pjpeg', 15),
+(6, 'Ticket to Ride', 'Engine Building', 'Days of Wonder', 4, 2, 2, 5, 'Ticket to Ride is a cross-country train adventure in which players collect and play matching train cards to claim railway routes connecting cities throughout North America.', 39.97, 'https://m.media-amazon.com/images/I/91YNJM4oyhL.jpg', 120),
+(7, 'Settlers of Catan', 'Worker Placement', 'Kosmos', 5, 5, 2, 7, 'Players take on the roles of settlers, each attempting to build and develop holdings while trading and acquiring resources. Players gain victory points as their settlements grow.', 28.99, 'https://www.catan.com/sites/default/files/2021-06/dye_catan_150407_0564.jpg', 60),
+(8, 'Magic the Gathering', 'Strategy', 'Wizards of the Coast', 1, 4, 1, 99, 'A player in Magic takes the role of a Planeswalker, a powerful wizard who can travel ("walk") between dimensions ("planes") of the Multiverse, doing battle with other players as Planeswalkers ', 49.99, 'https://media.gamestop.com/i/gamestop/11208572/Magic-The-Gathering-Arena-Starter-Kit-2022-', 45);
 
 -- --------------------------------------------------------
 
@@ -108,17 +99,6 @@ CREATE TABLE `publisher` (
   `publisher_id` int(11) NOT NULL,
   `publisher_name` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `publisher`
---
-
-INSERT INTO `publisher` (`publisher_id`, `publisher_name`) VALUES
-(1, 'Hasbro'),
-(2, 'Days of Wonder'),
-(3, 'University Games'),
-(4, 'Wizards of the Coast'),
-(5, 'Kosmos');
 
 -- --------------------------------------------------------
 
@@ -158,19 +138,19 @@ CREATE TABLE `user` (
   `l_name` varchar(64) NOT NULL,
   `password` varchar(64) NOT NULL,
   `email` varchar(64) NOT NULL,
-  `admin` boolean not NULL
+  `admin` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `user_name`, `user_address`, `f_name`, `l_name`, `password`, `email`,`admin`) VALUES
-(1, 'LuckyCharmz', 'address', 'Jon', 'Richardson', 'password1234', 'richjonr@iu.edu','1'),
-(2, 'CaptainCrunch', 'The Sea', 'Morgan', 'Spice', 'passwordCaptain', 'CaptainCrunch@gmail.com','0'),
-(3, 'Taurine', 'Somewhere', 'Jenn', 'Froth', 'password2345', 'jennFroth@gmail.com','0'),
-(4, 'Siri', 'IUPUI', 'Apple', 'Jobs', 'steve', 'apple@apple.com','0'),
-(5, 'blackjack', 'vegas', 'Terry', 'Benedict', 'Bellagio', 'tbenedict@bellagio.com','0');
+INSERT INTO `user` (`user_id`, `user_name`, `user_address`, `f_name`, `l_name`, `password`, `email`, `admin`) VALUES
+(1, 'LuckyCharmz', 'address', 'Jon', 'Richardson', 'password1234', 'richjonr@iu.edu', 1),
+(2, 'CaptainCrunch', 'The Sea', 'Morgan', 'Spice', 'passwordCaptain', 'CaptainCrunch@gmail.com', 0),
+(3, 'Taurine', 'Somewhere', 'Jenn', 'Froth', 'password2345', 'jennFroth@gmail.com', 0),
+(4, 'Siri', 'IUPUI', 'Apple', 'Jobs', 'steve', 'apple@apple.com', 0),
+(5, 'blackjack', 'vegas', 'Terry', 'Benedict', 'Bellagio', 'tbenedict@bellagio.com', 0);
 
 --
 -- Indexes for dumped tables
@@ -224,7 +204,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `genre_tbl`
 --
 ALTER TABLE `genre_tbl`
-  MODIFY `genre_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `genre_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `inventory_games`
 --
@@ -234,7 +214,7 @@ ALTER TABLE `inventory_games`
 -- AUTO_INCREMENT for table `publisher`
 --
 ALTER TABLE `publisher`
-  MODIFY `publisher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `publisher_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `transaction`
 --
