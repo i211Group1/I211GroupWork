@@ -31,7 +31,7 @@ class GameIndex extends GameIndexView {
 
             </div>
         </section>
-        <section class="border searchResults">
+        <section id="allGames" class="border searchResults">
             <h1 class="searchFieldHader fontColorGRY fontSUIreg">All Games:</h1>
             <div class="searchField">
             <?php

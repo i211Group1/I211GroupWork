@@ -44,6 +44,58 @@ class UserModel
         }
         return self::$_instance;
     }
+    public function view_user($user_id)
+    {
+        //the select sql statement
+//        $sql = "SELECT * FROM " . $this->tblGame . "," . $this->tblGameGenre .
+//            " WHERE " . $this->tblGame . ".genre_id=" . $this->tblGameGenre . ".genre_id" .
+//            " AND " . $this->tblGame . "id='$id'";
+
+        //sample SQL
+        $sql = "SELECT * FROM user WHERE user_id = " . $user_id;
+
+        try {
+            //execute the query
+            $query = $this->dbConnection->query($sql);
+
+            // if the query failed, return false.
+            if (!$query)
+                //return false;
+                throw new DatabaseExecutionException("Error encountered when executing the SQL query");
+
+            if ($query && $query->num_rows > 0) {
+
+                $obj = $query->fetch_object();
+
+                //create a game object
+                $user = new User(
+                    stripslashes($obj->userID),
+                    stripslashes($obj->userName),
+                    stripslashes($obj->userAddress),
+                    stripslashes($obj->firstName),
+                    stripslashes($obj->lastName),
+                    stripslashes($obj->userPassword),
+                    stripslashes($obj->userEmail),
+                    stripslashes($obj->adminPriv)
+                );
+
+                //set the id for the game
+                $user->setUserId($obj->game_id);
+
+                return $user;
+            }
+
+
+            return false;
+        }catch(DatabaseExecutionException $e){
+            $view = new GameError();
+            $view->display($e->getMessage());
+        } catch (Exception $e) {
+            $view = new GameError();
+            $view->display($e->getMessage());
+        }
+    }
+
 
 
 
