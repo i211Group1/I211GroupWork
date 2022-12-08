@@ -15,41 +15,49 @@ class GameSearch extends GameIndexView{
         //display page header
         parent::displayHeader("Search Results");
         ?>
-        <div id="main-header"> Search Results for <i><?= $terms ?></i></div>
-        <span class="rcd-numbers">
-            <?php
-            echo ((!is_array($games)) ? "( 0 - 0 )" : "( 1 - " . count($games) . " )");
-            ?>
-        </span>
-        <hr>
 
-        <!-- display all records in a grid -->
-        <div class="grid-container">
-            <?php
-            if ($games === 0) {
-                echo "No game was found.<br><br><br><br><br>";
-            } else {
-                //display games in a grid; six games per row
-                foreach ($games as $game) {
-                    $id = $game->getGameID();
-                    $title = $game->getGameName();
-                    $genre = $game->getGenre();
-                    $publisher = $game->getPublisher();
-                    $price = $game->getPrice();
-                    $image = $game->getImage();
+        <section class="border searchResults">
+            <h1 class="searchFieldHader fontColorGRY fontSUIreg">Search results for "<?=$terms?>":</h1>
+            <div class="searchField">
+                <?php
+                if ($games === 0) {
+                    echo "No Game was found.<br><br><br><br><br>";
+                } else {
+                    //display games in a grid; six games per row
+                    foreach ($games as $game) {
+                        $id = $game->getGameID();
+                        $title = $game->getGameName();
+//                    $genre = $game->getGenre();
+//                    $publisher = $game->getPublisher();
+                        $minPlayer = $game->getMinPlayer();
+                        $maxPlayer = $game->getMaxPlayer();
+                        $playTime = $game->getPlayTime();
+//                    $price = $game->getPrice();
+                        $image = $game->getImage();
 
-                    if (strpos($image, "http://") === false AND strpos($image, "https://") === false) {
-                        $image = BASE_URL . "/" . GAME_IMG . $image;
+                        if (strpos($image, "http://") === false AND strpos($image, "https://") === false) {
+                            $image = BASE_URL . "/" . GAME_IMG . $image;
+                        }
+
+                        echo"   <div class='gamebox'>
+                                <a href='", BASE_URL, "/game/detail/$id'>
+                                    <img src='".$image."' alt='image of ". $title ."'>
+                                    <div class='gameInfo fontSUIreg fontColorBLK'>
+                                        <h1 class=' fontSizeMed'>$title</h1>
+                                        <div class='playInfo fontSizeXSm'>
+                                            <div class='playTime'>$playTime min</div>
+                                            <div class='playerCount'>$minPlayer-$maxPlayer players</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>";
+
                     }
-
-                    echo "<div class='grid-item'><p><a href='", BASE_URL, "/game/detail/$id'><img src='" . $image .
-                        "'></a><span><br>$title<br>Publisher: $publisher<br>" ."Retail:". $price . "<br>Genre: ". $genre ."</span></p></div>";
-
                 }
-            }
-            ?>
-        </div>
-        <a href="<?= BASE_URL ?>/movie/index">Go to movie list</a>
+                ?>
+            </div>
+        </section>
+
         <?php
         //display page footer
         parent::displayFooter();

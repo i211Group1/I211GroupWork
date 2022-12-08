@@ -32,7 +32,7 @@ class GameIndexView extends IndexView {
                     <span>Welcome</span>
                 </div>
                 <div class="right">
-                    <a href="#">Home</a>
+                    <a href="<?= BASE_URL ?>/game/index" >Home</a>
                     <a href="#">About</a>
                     <a href="#">Games</a>
                     <a href="#">Contact</a>

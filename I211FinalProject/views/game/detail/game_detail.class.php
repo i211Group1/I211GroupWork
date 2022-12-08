@@ -23,7 +23,7 @@ class GameDetail extends GameIndexView {
         $title = $game->getGameName();
         $genre = $game->getGenre();
         $publisher = $game->getPublisher();
-        $price = $game->getPrice();
+//        $price = $game->getPrice();
         $minPlayer = $game->getMinPlayer();
         $maxPlayer = $game->getMaxPlayer();
         $playTime = $game->getPlayTime();
@@ -46,36 +46,29 @@ class GameDetail extends GameIndexView {
                     <div class="detail">
                         <label for="playTime">Playtime:</label>
                         <div class="gamedetail"><?php echo $playTime ?>min</div>
-                        <!-- <div class="gamedetail"><? $playTime?></div> -->
-                        <!-- <input type="text"> -->
-
                     </div>
                     <div class="detail">
                         <label for="playerCount">Player count:</label>
                         <div class="gamedetail"><?php echo $minPlayer ?>-<?php echo $maxPlayer ?></div>
-                        <!-- <input type="text"> -->
                     </div>
                     <div class="detail">
                         <label for="genre">Genre:</label>
                         <div class="gamedetail"><?php echo $genre ?></div>
-                        <!-- <input type="text"> -->
                     </div>
                     <div class="detail">
                         <label for="publisher">Publisher:</label>
                         <div class="gamedetail"><?php echo $publisher ?></div>
-                        <!-- <input type="text"> -->
                     </div>
                     <div class="detail">
                         <label for="descripttion">Description:</label>
                         <div class="gamedetail"><?php echo $description ?></div>
-                        <!-- <input type="text"> -->
                     </div>
                     <div class="options">
-                        <button id="editBtn" class="fontSUIbold fontColorWHT" onclick="window.location.href = '<?= BASE_URL ?>/game/edit/<?= $id ?>'">Edit</button>
+                        <input type="button" id="editBtn" class="fontSUIbold fontColorWHT" value="Edit" onclick="window.location.href = '<?= BASE_URL ?>/game/edit/<?= $id ?>'">
                     </div>
 
                 </form>
-                <a href="<?= BASE_URL ?>game/index" class="fontSUIbold fontColorGRY">back to home page</a>
+                <a href="<?= BASE_URL ?>/game/index" class="fontSUIbold fontColorGRY">back to home page</a>
 
             </div>
         </section>

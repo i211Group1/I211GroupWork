@@ -34,11 +34,7 @@ class IndexView
         <header>
             <div class="redFullWidth">
                 <div class="bright"></div>
-                <div class="dull">
-
-                </div>
-
-
+                <div class="dull"></div>
             </div>
             <div class="border headerMarg">
                 <div class="trident"></div>

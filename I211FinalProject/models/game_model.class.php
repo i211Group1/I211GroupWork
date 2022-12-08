@@ -153,9 +153,10 @@ class GameModel
                     stripslashes($obj->genre_name),
                     stripslashes($obj->publisher_name),
                     stripslashes($obj->description),
+                    stripslashes($obj->price),
                     stripslashes($obj->minPlayer),
                     stripslashes($obj->maxPlayer),
-                    stripslashes($obj->price),
+                    stripslashes($obj->playTime),
                     stripslashes($obj->image)
                 );
 
@@ -215,10 +216,10 @@ class GameModel
                     $obj->genre_id,
                     $obj->publisher_id,
                     $obj->description,
-                    $obj->playTime,
+                    $obj->price,
                     $obj->minPlayer,
                     $obj->maxPlayer,
-                    $obj->price,
+                    $obj->playTime,
                     $obj->image);
 
             //set the id for the game
