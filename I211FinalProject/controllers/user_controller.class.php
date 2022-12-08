@@ -1,6 +1,6 @@
 <?php
 /**
- *Name: Jennifer Baldwin
+ *Name: Jennifer Baldwin and Jon Ross Richardson
  *Date: 12/8/2022
  *File: user_controller.class.php
  *Description: the user controller
@@ -23,7 +23,7 @@ class UserController
 
         if(!$user){
             //display an error
-            $message= "there was a problem displaying the user id='". $id. "'.";
+            $message= "there was a problem displaying the user id='". $user_id. "'.";
             $this->error($message);
         }
 
