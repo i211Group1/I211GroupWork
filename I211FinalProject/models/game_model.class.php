@@ -153,7 +153,6 @@ class GameModel
                     stripslashes($obj->genre_name),
                     stripslashes($obj->publisher_name),
                     stripslashes($obj->description),
-                    stripslashes($obj->price),
                     stripslashes($obj->minPlayer),
                     stripslashes($obj->maxPlayer),
                     stripslashes($obj->price),
@@ -216,7 +215,7 @@ class GameModel
                     $obj->genre_id,
                     $obj->publisher_id,
                     $obj->description,
-                    $obj->price,
+                    $obj->playTime,
                     $obj->minPlayer,
                     $obj->maxPlayer,
                     $obj->price,
@@ -250,11 +249,10 @@ class GameModel
                 !filter_has_var(INPUT_POST, 'minPlayer') ||
                 !filter_has_var(INPUT_POST, 'maxPlayer') ||
                 !filter_has_var(INPUT_POST, 'playTime') ||
-                !filter_has_var(INPUT_POST, 'price') ||
                 !filter_has_var(INPUT_POST, 'image')) {
 
                 //throw error if fields are not correct
-                throw new DataTypeException("Missing Game fields. All Game fields are required please.");
+                throw new DataMissingException("Missing Game fields. All Game fields are required please.");
             }
 
             //retrieve data for the new game; data are sanitized and escaped for security.
@@ -284,10 +282,10 @@ class GameModel
             }
 
             return $query;
-        }catch(DatabaseExecutionException $e) {
+        }catch(DataMissingException $e) {
             $view = new GameError();
             $view->display($e->getMessage());
-        }catch (DataTypeException $e){
+        }catch (DatabaseExecutionException $e){
             $view = new GameError();
             $view->display($e->getMessage());
         } catch (Exception $e) {

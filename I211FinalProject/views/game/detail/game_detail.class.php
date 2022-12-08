@@ -13,7 +13,7 @@ class GameDetail extends GameIndexView {
 //    public function __construct($game){
 //        $this->game = $game;
 //    }
-    public function display($game, $confirm){
+    public function display($game){
 
         //display page header
         parent::displayHeader("Game Details");
@@ -37,13 +37,12 @@ class GameDetail extends GameIndexView {
 
         <section class="border gameDetails fontColorBLK">
             <div class="left">
-                <span><?php echo $confirm ?></span>
                 <h1 class="fontSUIbold"><?php echo $title ?></h1>
                 <?php echo"<img src='" . $image . "' alt='gamebox of " . $title . "'>" ?>
 
             </div>
             <div class="right">
-                <form action="">
+                <form class="fontSUIreg" action="">
                     <div class="detail">
                         <label for="playTime">Playtime:</label>
                         <div class="gamedetail"><?php echo $playTime ?>min</div>

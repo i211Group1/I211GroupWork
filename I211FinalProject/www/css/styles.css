@@ -295,3 +295,63 @@ footer {
     .gameDetails .right a {
       width: fit-content;
       align-self: flex-end; }
+
+.gameEdit {
+  margin: 25px auto 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; }
+  .gameEdit h1 {
+    margin-bottom: 40px; }
+  .gameEdit form {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column; }
+    .gameEdit form .top {
+      display: flex;
+      justify-content: space-evenly; }
+      .gameEdit form .top div {
+        width: 46%; }
+      .gameEdit form .top .left {
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column; }
+    .gameEdit form div > .detail {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px; }
+      .gameEdit form div > .detail .label {
+        width: 30%; }
+      .gameEdit form div > .detail input {
+        width: 60%; }
+      .gameEdit form div > .detail .playerCount {
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; }
+        .gameEdit form div > .detail .playerCount input {
+          width: 30%; }
+      .gameEdit form div > .detail textarea {
+        height: 200px;
+        width: 70%; }
+    .gameEdit form .options {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin: 20px 0 30px; }
+      .gameEdit form .options button, .gameEdit form .options input {
+        height: 50px;
+        padding: 10px 15px;
+        border-radius: 15px;
+        border: none; }
+      .gameEdit form .options #saveBtn {
+        background-color: #742222; }
+      .gameEdit form .options #cancelBtn {
+        background-color: #707070;
+        margin-right: 30px; }
+  .gameEdit a {
+    width: fit-content;
+    align-self: flex-end; }

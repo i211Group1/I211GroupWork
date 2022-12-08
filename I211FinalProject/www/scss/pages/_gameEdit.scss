@@ -1,0 +1,90 @@
+.gameEdit{
+    margin: 25px auto 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    h1{
+        margin-bottom: 40px;
+    }
+    form{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        .top{
+            display: flex;
+            justify-content: space-evenly;
+            div{
+                width: 46%;
+            }
+            .left{
+                width: 40%;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: column;
+            }
+            
+        }
+        div>.detail{
+            width: 100%;
+
+            display: flex;
+            justify-content: space-between;
+
+            margin-bottom: 5px;
+
+            .label{
+                width: 30%;
+            }
+            input{
+                width: 60%;
+            }
+            .playerCount{
+                width: 30%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                // text-align: right;
+                // justify-content: space-between;
+                input{
+                    width: 30%;
+                }
+            }
+            textarea{
+                height: 200px;
+                width: 70%;
+            }
+            
+        }
+        .options{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin: 20px 0 30px;
+
+            button, input{
+                height:50px;
+                padding: 10px 15px;
+                border-radius: 15px;
+                border: none;
+            }
+            #saveBtn{
+                background-color: $DullRed;
+            }
+            #cancelBtn{
+                background-color: $siteGrey;
+                margin-right: 30px;
+            }
+
+        }
+    }
+    a{
+        width: fit-content;
+        align-self: flex-end;
+        // justify-content: flex-end;
+    }
+
+    // display: flex;
+    // justify-content: space-between;
+}

@@ -1,10 +1,10 @@
 <?php
-/**
- * Author: Luke Erny
- * Date: 11/10/2022
- * File: game_edit.class.php
- * Description: This class defines a method "display" and then the method accepts a Product object and displays the details of the product in a form to be edited.
- */
+//*
+// * Author: Luke Erny
+// * Date: 11/10/2022
+// * File: game_edit.class.php
+// * Description: This class defines a method "display" and then the method accepts a Product object and displays the details of the product in a form to be edited.
+// *
 
 class GameEdit extends GameIndexView {
     public function display($game) {
@@ -14,21 +14,77 @@ class GameEdit extends GameIndexView {
         //retrieve game details by calling get methods
         $game_id = $game->getGameId();
         $game_name = $game->getGameName();
-        $genre = $game->getGenre();
+        $genre_id = $game->getGenre();
         $publisher = $game->getPublisher();
         $description = $game->getDescription();
-        $price = $game->getPrice();
-        $playerMin = $game->getMaxPlayer();
-        $playerMax = $game->getMinPlayer();
+        $playerMin = $game->getMinPlayer();
+        $playerMax = $game->getMaxPlayer();
         $playTime = $game->getPlayTime();
         $image = $game->getImage();
         ?>
 
-        <div id="main-header" class="border">Edit Game Details</div>
+
+
+        <section class="border gameEdit fontColorBLK">
+            <h1 class="fontSUIbold">Edit Game Details</h1>
+
+<!--             display game details in a form-->
+
+        <form class="fontSUIreg" action='<?= BASE_URL . "/game/update/" . $game_id ?>' method="post">
+            <input type="hidden" name="game_id" value="<?= $game_id ?>">
+
+            <div class="top">
+                <div class="left">
+                    <div class="detail">
+                        <label for="playTime">Game Title:</label>
+                        <input type="text"  name="game_name" value="<?= $game_name ?>">
+                    </div>
+                    <div class="detail">
+                        <label for="playTime">Playtime:</label>
+                        <input type="text"  name="playTime" value="<?= $playTime ?>">
+                    </div>
+                    <div class="detail">
+                        <label for="playerCount">Player count:</label>
+                        <div class="playerCount">
+                            <input  name="playerMin" value="<?= $playerMin ?>" type="number">
+                            <span>-</span>
+                            <input  name="playerMax" value="<?= $playerMax ?>"type="number">
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <label for="genre">Genre:</label>
+                        <input type="text"  name="genre" value="<?= $genre_id ?>">
+                    </div>
+                    <div class="detail">
+                        <label for="genre">Image: <i>url (http:// or https://) or local file including path and file extension</i></label>
+                        <input name="image" type="text" size="100" required value="<?= $image ?>"></p>
+                    </div>
+                    <div class="detail">
+                        <label for="publisher">Publisher:</label>
+                        <input type="text" name="publisher_id" value="<?= $publisher ?>">
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="detail">
+                        <label for="descripttion">Description:</label>
+                        <textarea type="text" name="description" ><?= $description?></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="options">
+                    <input id="cancelBtn" class="fontSUIbold fontColorWHT" type="button" value="Cancel" onclick='window.location.href = "<?= BASE_URL . "/game/detail/" . $game_id ?>"'>
+                    <input id="saveBtn" class="fontSUIbold fontColorWHT" type="submit" name="action" value="Update Game">
+                </div>
+            </div>
+        </form>
+        <a class="fontSUIbold fontColorGRY">back to home page</a>
+        </section>
+
+
 
         <!-- display product details in a form -->
         <form class="new-media"  action='<?= BASE_URL . "/game/update/" . $game_id ?>' method="post" style="border: 1px solid #bbb; margin-top: 10px; padding: 10px;">
-            <input type="hidden" name="id" value="<?= $game_id ?>">
 
             <p><strong>Game</strong><br>
                 <input name="game" type="text" size="100" value="<?= $game_name ?>" required autofocus></p>
