@@ -88,8 +88,8 @@ class GameModel
             while ($obj = $query->fetch_object()) {
                 $game = new Game(
                 stripslashes($obj->game_name),
-                stripslashes($obj->genre_name),
-                stripslashes($obj->publisher_name),
+                stripslashes($obj->genre),
+                stripslashes($obj->publisher),
                 stripslashes($obj->description),
                 stripslashes($obj->minPlayer),
                 stripslashes($obj->maxPlayer),
