@@ -6,7 +6,7 @@
 // * Description: This class defines a method "display" and then the method accepts a Product object and displays the details of the product in a form to be edited.
 // *
 
-class GameEdit extends GameIndexView {
+class GameEdit extends IndexView {
     public function display($game) {
         //display page header
         parent::displayHeader("Edit Game");
@@ -17,8 +17,8 @@ class GameEdit extends GameIndexView {
         $genre = $game->getGenre();
         $publisher = $game->getPublisher();
         $description = $game->getDescription();
-        $playerMin = $game->getMinPlayer();
-        $playerMax = $game->getMaxPlayer();
+        $minPlayer = $game->getMinPlayer();
+        $maxPlayer = $game->getMaxPlayer();
         $playTime = $game->getPlayTime();
         $image = $game->getImage();
         ?>
@@ -46,9 +46,9 @@ class GameEdit extends GameIndexView {
                     <div class="detail">
                         <label for="playerCount">Player count:</label>
                         <div class="playerCount">
-                            <input  name="playerMin" value="<?= $playerMin ?>" type="number">
+                            <input  name="minPlayer" value="<?= $minPlayer ?>" type="number">
                             <span>-</span>
-                            <input  name="playerMax" value="<?= $playerMax ?>"type="number">
+                            <input  name="maxPlayer" value="<?= $maxPlayer ?>"type="number">
                         </div>
                     </div>
                     <div class="detail">

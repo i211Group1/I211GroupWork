@@ -6,7 +6,7 @@
  * Description: definition for GameDetail class
  */
 
-class UserDetail extends UserIndexView {
+class UserDetail extends IndexView {
 
     public function display($user){
 
@@ -30,7 +30,7 @@ class UserDetail extends UserIndexView {
         <section class="border gameDetails fontColorBLK">
             <div class="left">
                 <h1 class="fontSUIbold"><?php echo $firstName ?>'s Profile</h1>
-                <img src="www/img/error.jpg"
+                <img src="../www/img/error.jpg" alt="falling dice">
 
             </div>
             <div class="right">

@@ -5,7 +5,7 @@
  * File: game_search.class.php
  * Description:
  */
-class GameSearch extends GameIndexView{
+class GameSearch extends IndexView{
     /*
      * the displays accepts an array of movie objects and displays
      * them in a grid.

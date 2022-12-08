@@ -6,7 +6,7 @@
  * Description: definition for GameDetail class
  */
 
-class GameDetail extends GameIndexView {
+class GameDetail extends IndexView {
 
     public function display($game){
 

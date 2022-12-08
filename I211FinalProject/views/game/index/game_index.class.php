@@ -5,7 +5,7 @@
  * Name: game_index.class.php
  * Description: This class defines a method called "display", which displays all games.
  */
-class GameIndex extends GameIndexView {
+class GameIndex extends IndexView {
     /*
      * the display method accepts an array of movie objects and displays
      * them in a grid.

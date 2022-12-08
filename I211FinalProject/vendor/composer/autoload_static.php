@@ -22,13 +22,14 @@ class ComposerStaticInite3e9c0b9db364f036517aa5d2400f8b1
         'GameEdit' => __DIR__ . '/../..' . '/views/game/edit/game_edit.class.php',
         'GameError' => __DIR__ . '/../..' . '/views/game/error/game_error.class.php',
         'GameIndex' => __DIR__ . '/../..' . '/views/game/index/game_index.class.php',
-        'GameIndexView' => __DIR__ . '/../..' . '/views/game/game_index_view.class.php',
         'GameModel' => __DIR__ . '/../..' . '/models/game_model.class.php',
         'GameSearch' => __DIR__ . '/../..' . '/views/game/search/game_search.class.php',
         'IndexView' => __DIR__ . '/../..' . '/views/index_view.class.php',
         'User' => __DIR__ . '/../..' . '/models/user.class.php',
         'UserController' => __DIR__ . '/../..' . '/controllers/user_controller.class.php',
         'UserDetail' => __DIR__ . '/../..' . '/views/user/detail/user_detail.class.php',
+        'UserError' => __DIR__ . '/../..' . '/views/user/error/user_error.class.php',
+        'UserIndexView' => __DIR__ . '/../..' . '/views/user/user_index_view.class.php',
         'UserModel' => __DIR__ . '/../..' . '/models/user_model.class.php',
     );
 

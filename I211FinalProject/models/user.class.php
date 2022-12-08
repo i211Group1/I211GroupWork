@@ -10,8 +10,7 @@ class User
     //declare public variables
     private $user_id, $user_name, $user_address, $fName, $lName, $password, $email, $admin;
 
-    public function __construct($userID,$userName,$userAddress,$firstName,$lastName, $userPassword,$userEmail,$adminPriv){
-        $this->user_id = $userID;
+    public function __construct($userName,$userAddress,$firstName,$lastName, $userPassword,$userEmail,$adminPriv){
         $this->user_name = $userName;
         $this->user_address = $userAddress;
         $this->fName = $firstName;
@@ -106,10 +105,10 @@ class User
     /**
      * @return mixed
      */
-//    public function getPassword()
-//    {
-//        return $this->password;
-//    }
+    public function getPassword()
+    {
+        return $this->password;
+    }
 
     /**
      * @param mixed $password

@@ -7,15 +7,15 @@
  */
 
 
-class UserController
-{
+class UserController{
+
     private $user_model;
 
     //constructor
     public function __construct()
     {
         // create an instance of the GameModel class
-        $this->user_model = new userModel();
+        $this->user_model = new UserModel();
     }
 
     //show details of a game

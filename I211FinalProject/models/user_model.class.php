@@ -46,12 +46,6 @@ class UserModel
     }
     public function view_user($user_id)
     {
-        //the select sql statement
-//        $sql = "SELECT * FROM " . $this->tblGame . "," . $this->tblGameGenre .
-//            " WHERE " . $this->tblGame . ".genre_id=" . $this->tblGameGenre . ".genre_id" .
-//            " AND " . $this->tblGame . "id='$id'";
-
-        //sample SQL
         $sql = "SELECT * FROM user WHERE user_id = " . $user_id;
 
         try {
@@ -65,21 +59,25 @@ class UserModel
 
             if ($query && $query->num_rows > 0) {
 
+
                 $obj = $query->fetch_object();
+
+//                var_dump($obj);
+//                die();
 
                 //create a game object
                 $user = new User(
-                    stripslashes($obj->userName),
-                    stripslashes($obj->userAddress),
-                    stripslashes($obj->firstName),
-                    stripslashes($obj->lastName),
-                    stripslashes($obj->userPassword),
-                    stripslashes($obj->userEmail),
-                    stripslashes($obj->adminPriv)
+                    stripslashes($obj->user_name),
+                    stripslashes($obj->user_address),
+                    stripslashes($obj->f_name),
+                    stripslashes($obj->l_name),
+                    stripslashes($obj->password),
+                    stripslashes($obj->email),
+                    stripslashes($obj->admin)
                 );
 
                 //set the id for the game
-                $user->setUserId($obj->userID);
+                $user->setUserId($obj->user_id);
 
                 return $user;
             }
