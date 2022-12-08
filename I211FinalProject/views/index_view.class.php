@@ -28,9 +28,6 @@ class IndexView
             <meta charset="UTF-8">
             <title>IUPUI Game Rental</title>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-            <!-- Josh's css sheet-->
-<!--                <link href="www/css/site_style.css" rel="stylesheet" type="text/css"/>-->
-
             <script>
                 //create the JavaScript variable for the base url
                 var base_url = "<?= BASE_URL ?>";
@@ -105,12 +102,12 @@ class IndexView
             </div>
             <div class="col">
                 <section class="sub">
-                    <p>Scholarshops</p>
+                    <p>Scholarships</p>
                     <p>Art at the Library</p>
                     <p>Special Collections</p>
                 </section>
                 <section class="sub">
-                    <p>Blah Blah Blah</p>
+                    <p>Sponsors</p>
                     <p>Other Links</p>
                     <p>Related things</p>
                 </section>
@@ -126,17 +123,11 @@ class IndexView
                     <p>Luke Erny</p>
                     <p>John Ross Richardson</p>
                     <p>Jennifer Baldwin</p>
-<!--                    <p>Josh Tuffnell</p>-->
+                    <p>Josh Tuffnell</p>
                 </section>
             </div>
         </footer>
-<!--        <div id="footer">-->
-<!--            <p>IUPUI 2022<br>Project Created by Luke Erny, Josh Tuffnell, John Ross Richardson, and Jennifer Baldwin.</p>-->
-<!--        <br>-->
-<!--        </body>-->
-<!--        </div>-->
-<!--        </html>-->
-        <!--    footer view goes here    -->
+
 
         <?php
     }
