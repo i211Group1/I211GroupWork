@@ -26,5 +26,6 @@ return array(
     'GameSearch' => $baseDir . '/views/game/search/game_search.class.php',
     'IndexView' => $baseDir . '/views/index_view.class.php',
     'User' => $baseDir . '/models/user.class.php',
+    'UserController' => $baseDir . '/controllers/user_controller.class.php',
     'UserModel' => $baseDir . '/models/user_model.class.php',
 );

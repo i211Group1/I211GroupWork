@@ -33,9 +33,9 @@ class GameIndexView extends IndexView {
                 </div>
                 <div class="right">
                     <a href="<?= BASE_URL ?>/game/index" >Home</a>
-                    <a href="#">About</a>
                     <a href="<?= BASE_URL ?>/game/index#allGames">Games</a>
-                    <a href="#">Contact</a>
+                    <a href="#">Profile</a>
+                    <a href="#">History</a>
                     <a href="#">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </a>

@@ -8,9 +8,9 @@
 
 class Game
 {
-    private $game_id, $game_name, $genre, $publisher, $description, $price, $minPlayer, $maxPlayer, $playTime, $image;
+    private $game_id, $game_name, $genre, $publisher, $description, $minPlayer, $maxPlayer, $playTime, $image;
 
-    public function __construct( $game_name, $genre, $publisher, $description, $price, $minPlayer, $maxPlayer, $playTime, $image)
+    public function __construct( $game_name, $genre, $publisher, $description, $minPlayer, $maxPlayer, $playTime, $image)
     {
         $this->game_name = $game_name;
         $this->genre = $genre;
@@ -19,7 +19,6 @@ class Game
         $this->minPlayer = $minPlayer;
         $this->maxPlayer = $maxPlayer;
         $this->playTime = $playTime;
-        $this->price = $price;
         $this->image = $image;
     }
 

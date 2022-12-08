@@ -65,9 +65,7 @@ class GameModel
 //        $sql = "SELECT * FROM " . $this->tblGame . "," . $this->tblGameGenre .
 //            " WHERE " . $this->tblGame . ".genre_id=" . $this->tblGameGenre . ".genre_id";
 
-        $sql = "SELECT * FROM inventory_games
-        JOIN publisher ON inventory_games.publisher_id=publisher.publisher_id
-        JOIN genre_tbl ON inventory_games.genre_id=genre_tbl.genre_id";
+        $sql = "SELECT * FROM inventory_games";
 
         try {
             //execute the query
@@ -93,7 +91,6 @@ class GameModel
                 stripslashes($obj->genre_name),
                 stripslashes($obj->publisher_name),
                 stripslashes($obj->description),
-                stripslashes($obj->price),
                 stripslashes($obj->minPlayer),
                 stripslashes($obj->maxPlayer),
                 stripslashes($obj->playTime),
@@ -129,8 +126,6 @@ class GameModel
 
         //sample SQL
         $sql = "SELECT * FROM inventory_games
-        JOIN publisher ON inventory_games.publisher_id=publisher.publisher_id
-        JOIN genre_tbl ON inventory_games.genre_id=genre_tbl.genre_id
         
         WHERE game_id = " . $id;
 
@@ -150,10 +145,9 @@ class GameModel
                 //create a game object
                 $game = new Game(
                     stripslashes($obj->game_name),
-                    stripslashes($obj->genre_name),
-                    stripslashes($obj->publisher_name),
+                    stripslashes($obj->genre),
+                    stripslashes($obj->publisher),
                     stripslashes($obj->description),
-                    stripslashes($obj->price),
                     stripslashes($obj->minPlayer),
                     stripslashes($obj->maxPlayer),
                     stripslashes($obj->playTime),
@@ -216,7 +210,6 @@ class GameModel
                     $obj->genre_id,
                     $obj->publisher_id,
                     $obj->description,
-                    $obj->price,
                     $obj->minPlayer,
                     $obj->maxPlayer,
                     $obj->playTime,
@@ -242,36 +235,36 @@ class GameModel
     public function update_game($id)
     {
         try {
-            //if the script did not received post data, display an error message and then terminite the script immediately
-            if (!filter_has_var(INPUT_POST, 'game_name') ||
-                !filter_has_var(INPUT_POST, 'genre_id') ||
-                !filter_has_var(INPUT_POST, 'publisher_id') ||
-                !filter_has_var(INPUT_POST, 'description') ||
+            //if the script did not receive post data, display an error message and then terminite the script immediately
+            if (!filter_has_var(INPUT_POST, 'game_id') ||
+                !filter_has_var(INPUT_POST, 'game_name') ||
+                !filter_has_var(INPUT_POST, 'genre') ||
+                !filter_has_var(INPUT_POST, 'publisher') ||
                 !filter_has_var(INPUT_POST, 'minPlayer') ||
                 !filter_has_var(INPUT_POST, 'maxPlayer') ||
                 !filter_has_var(INPUT_POST, 'playTime') ||
-                !filter_has_var(INPUT_POST, 'image')) {
+                !filter_has_var(INPUT_POST, 'image') ||
+                !filter_has_var(INPUT_POST, 'description')) {
 
                 //throw error if fields are not correct
-                throw new DataMissingException("Missing Game fields. All Game fields are required please.");
+                throw new DataMissingException("Missing Game fields. All Game fields are required.");
             }
 
             //retrieve data for the new game; data are sanitized and escaped for security.
             $game_name = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'game_name', FILTER_SANITIZE_STRING)));
-            $genre_id = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'genre_id', FILTER_SANITIZE_STRING)));
-            $publisher_id = $this->dbConnection->real_escape_string(filter_input(INPUT_POST, 'publisher_id', FILTER_DEFAULT));
+            $genre = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'genre', FILTER_SANITIZE_STRING)));
+            $publisher = $this->dbConnection->real_escape_string(filter_input(INPUT_POST, 'publisher', FILTER_DEFAULT));
             $description = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING)));
             $minPlayer = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'minPlayer', FILTER_SANITIZE_STRING)));
             $maxPlayer = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'maxPlayer', FILTER_SANITIZE_STRING)));
             $playTime = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'playTime', FILTER_SANITIZE_STRING)));
-            $price = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'price', FILTER_SANITIZE_STRING)));
             $image = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'image', FILTER_SANITIZE_STRING)));
 
 
             //query string for update
             $sql = "UPDATE " . $this->tblGame .
-                " SET game_name='$game_name', genre_id='$genre_id', publisher='$publisher_id', description='$description',  minPlayer='$minPlayer',  maxPlayer='$maxPlayer',  playTime='$playTime', "
-                . "price='$price', image='$image' WHERE id='$id'";
+                " SET game_name='$game_name', genre='$genre', publisher='$publisher', description='$description',  minPlayer='$minPlayer',  maxPlayer='$maxPlayer',  playTime='$playTime', "
+                . " image='$image' WHERE id='$id'";
 
             //execute the query
             //return $this->dbConnection->query($sql);

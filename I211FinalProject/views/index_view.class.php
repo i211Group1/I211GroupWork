@@ -12,6 +12,7 @@ class IndexView
     //this method displays the page header
     static public function displayHeader($page_title)
     {
+
         ?>
         <!DOCTYPE html>
         <html>
