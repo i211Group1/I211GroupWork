@@ -24,6 +24,8 @@ return array(
     'GameModel' => $baseDir . '/models/game_model.class.php',
     'GameSearch' => $baseDir . '/views/game/search/game_search.class.php',
     'IndexView' => $baseDir . '/views/index_view.class.php',
+    'LoginVerify' => $baseDir . '/views/user/login/user_login_verify.class.php',
+    'Logout' => $baseDir . '/views/user/logout/logout.class.php',
     'User' => $baseDir . '/models/user.class.php',
     'UserController' => $baseDir . '/controllers/user_controller.class.php',
     'UserDetail' => $baseDir . '/views/user/detail/user_detail.class.php',

@@ -148,6 +148,56 @@ class UserModel
 
     }
 
+    //make sure that the user exists.
+    public function verify_user() {
+
+        $username = trim(filter_input(INPUT_POST, 'user_name', FILTER_SANITIZE_STRING));
+        $pw = trim(filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING));
+
+        //filter table data by username
+        $sql = "SELECT password, admin, user_id FROM " . $this->db->getUserTable() . " WHERE user_name='$username'";
+
+        //Run SQL statement
+        $query = $this->dbConnection->query($sql);
+
+        //set a cookie if the password is verified
+        if ($query AND $query->num_rows > 0) {
+            $result_row = $query->fetch_assoc();
+
+            //retrieve the value of role from the row the user invoked
+            $admin = $result_row['admin'];
+
+            //retrieve the value of the user's unique account ID to call up data
+            $id = $result_row['user_id'];
+
+            //set a cookie to the role according to the user's name
+            setcookie("admin", $admin);
+
+            //assign the cookie to the variable role so that this information is immediately detected on the page.
+            $_COOKIE['admin'] = $admin;
+
+            $hash = $result_row['password'];
+            if (password_verify($pw, $hash)) {
+                setcookie("user_name", $username);
+
+                //make the website display who is logged in from the header
+                $_COOKIE['user_name'] = $username;
+
+
+                setcookie("user_id", $id, 0, '/');
+                $_COOKIE['user_id'] = $id;
+
+                return true;
+            }
+        }
+        //return false if credentials are rejected (user does not log in)
+        return false;
+    }
+
+    public function logout(){
+
+    }
+
 
 
 

@@ -25,6 +25,8 @@ class ComposerStaticInite3e9c0b9db364f036517aa5d2400f8b1
         'GameModel' => __DIR__ . '/../..' . '/models/game_model.class.php',
         'GameSearch' => __DIR__ . '/../..' . '/views/game/search/game_search.class.php',
         'IndexView' => __DIR__ . '/../..' . '/views/index_view.class.php',
+        'LoginVerify' => __DIR__ . '/../..' . '/views/user/login/user_login_verify.class.php',
+        'Logout' => __DIR__ . '/../..' . '/views/user/logout/logout.class.php',
         'User' => __DIR__ . '/../..' . '/models/user.class.php',
         'UserController' => __DIR__ . '/../..' . '/controllers/user_controller.class.php',
         'UserDetail' => __DIR__ . '/../..' . '/views/user/detail/user_detail.class.php',

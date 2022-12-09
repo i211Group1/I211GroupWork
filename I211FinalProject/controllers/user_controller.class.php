@@ -72,4 +72,20 @@ class UserController{
         $view->display();
     }
 
+    public function login_verify() {
+        //call the verifyUser method of the UserModel object
+        $result = $this->user_model->verify_user();
+
+        //display result
+        $view = new LoginVerify();
+        $view->display($result);
+    }
+
+    //logout function
+    public function logout(){
+        $this->user_model->logout();
+        $view = new Logout();
+        $view->display();
+    }
+
 }

@@ -14,22 +14,22 @@ class UserLogin extends IndexView{
 
         ?>
         <div id="login" class="border">
-            <p class="p-title">Sign in</p>
+            <p class="">Sign in</p>
 
-            <form action="userverifyaccount.php" method="post">
+            <form action="<?= BASE_URL ?>/user/login_verify" method="post">
 
-                <div class="input-wrapper">
+                <div class="wrapper">
                     <label for="username">Username</label>
-                    <input name="username" type="text" class="login-field" required>
+                    <input name="user_name" type="text" required>
                 </div>
-                <div class="input-wrapper">
+                <div class="wrapper">
                     <label for="password">Password</label>
-                    <input type='password' name='password' class="login-field" required>
+                    <input type='password' name='password' required>
                 </div>
 
                 <input id="submit" type="submit" name="Submit"  value="Login"/>
             </form>
-            <p class="p-textLarge">Don't have an account? <a href="<?= BASE_URL ?>/user/register">Create One!</a></p>
+            <p class="">Don't have an account? <a href="<?= BASE_URL ?>/user/register">Create One!</a></p>
         </div>
 <?php
         //display page footer
