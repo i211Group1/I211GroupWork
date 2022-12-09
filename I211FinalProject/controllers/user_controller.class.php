@@ -50,6 +50,21 @@ class UserController{
         $view->display();
     }
 
+    //create user account
+    public function  register_verify(){
+
+        $result = $this->user_model->add_user();
+
+        if(!$result){
+            $message = "There was a problem creating your account.";
+            $this->error($message);
+            return;
+        }
+
+        $view = new UserRegisterVerify();
+        $view->display($result);
+    }
+
     //show login page
     public function login(){
         //display movie details

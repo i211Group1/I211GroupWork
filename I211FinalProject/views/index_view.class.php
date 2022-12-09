@@ -88,6 +88,7 @@ class IndexView
                 </div>
             </div>
         </nav>
+        <h1 class="border fontSUIreg fontColorGRY fontSizeXLg" style="margin-top: 20px;"><?=$page_title?></h1>
 
 
         <?php

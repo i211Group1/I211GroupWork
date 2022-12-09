@@ -15,45 +15,35 @@ class UserRegister extends IndexView{
         <div id="signup" class="border accInfo">
             <p class="p-title">Create Account</p>
 
-            <form action="register.php" method="post">
+            <form action="<?= BASE_URL . '/user/register_verify'?>" method="post">
                 <div class="name-wrapper">
                     <div class="input-wrapper">
                         <label for="first_name">First Name</label>
-                        <input class="login-field" name="first_name" type="text" required>
+                        <input class="login-field" name="f_name" type="text" required>
                     </div>
                     <div class="input-wrapper">
                         <label for="last_name">Last Name</label>
-                        <input class="login-field" name="last_name" type="text" required>
+                        <input class="login-field" name="l_name" type="text" required>
                     </div>
                 </div>
                 <div class="input-wrapper">
                     <label for="username">Username</label>
-                    <input name="username" type="text" class="login-field" required>
+                    <input name="user_name" type="text" class="login-field" required>
+                </div>
+                <div class="input-wrapper">
+                    <label for="user_email">Email</label>
+                    <input class="login-field" name="email" type="email" required>
                 </div>
                 <div class="input-wrapper">
                     <label for="password">Password</label>
                     <input type='password' name='password' class="login-field" required>
                 </div>
                 <div class="input-wrapper">
-                    <label for="user_email">Email</label>
-                    <input class="login-field" name="user_email" type="email" required>
-                </div>
-                <div class="input-wrapper">
                     <label for="address">Address</label>
-                    <input class="login-field" name="address" type="text" required>
-                </div>
-                <div class="cityState-wrapper">
-                    <div class="input-wrapper city">
-                        <label for="city_name">City</label>
-                        <input class="login-field" name="city_name" type="text" required>
-                    </div>
-                    <div class="input-wrapper state">
-                        <label for="state">State</label>
-                        <input class="login-field" name="state" type="text" required>
-                    </div>
+                    <input class="login-field" name="user_address" type="text" required>
                 </div>
 
-                <input id="submit" type="submit" onclick="window.location.href ='register.php'" value="Sign Up"/>
+                <input id="submit" type="submit" value="Sign Up"/>
             </form>
             <p class="p-textLarge">Already have an account? <a href="<?= BASE_URL ?>/user/login">Login!</a></p>
         </div>

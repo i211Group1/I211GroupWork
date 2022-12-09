@@ -44,6 +44,7 @@ class UserModel
         }
         return self::$_instance;
     }
+
     public function view_user($user_id)
     {
         $sql = "SELECT * FROM user WHERE user_id = " . $user_id;
@@ -91,6 +92,60 @@ class UserModel
             $view = new UserError();
             $view->display($e->getMessage());
         }
+    }
+
+    public function add_user(){
+
+        try {
+            //if the script did not receive post data, display an error message and then terminite the script immediately
+            if (!filter_has_var(INPUT_POST, 'user_name') ||
+                !filter_has_var(INPUT_POST, 'user_address') ||
+                !filter_has_var(INPUT_POST, 'f_name') ||
+                !filter_has_var(INPUT_POST, 'l_name') ||
+                !filter_has_var(INPUT_POST, 'password') ||
+                !filter_has_var(INPUT_POST, 'email')) {
+
+                //throw error if fields are not correct
+                throw new DataMissingException("Missing Game fields. All Game fields are required.");
+            }
+
+            //retrieve password, then remove white space, filter, and sanitize
+            $pw = trim(filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING));
+
+            //function to hash the password
+            $hash_pw = password_hash($pw, PASSWORD_DEFAULT);
+
+            //retrieve all attributes from the user input form
+            $username = filter_input(INPUT_POST, "user_name", FILTER_SANITIZE_NUMBER_INT);
+            $address = filter_input(INPUT_POST, "user_address", FILTER_SANITIZE_STRING);
+            $fName = filter_input(INPUT_POST, "fName", FILTER_SANITIZE_STRING);
+            $lName = filter_input(INPUT_POST, "lName", FILTER_SANITIZE_STRING);
+            $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_NUMBER_FLOAT);
+            $admin = 0;
+
+            //construct an INSERT query
+            $sql = "INSERT INTO " . $this->db->getUserTable() . "  SET f_name='$fName', user_name='$username', l_name='$lName', user_address='$address', password='$hash_pw', email='$email', admin= $admin";
+
+//            $sql = "INSERT INTO " . $this->db->getUserTable() . " VALUES('$username', '$address', '$fName', '$lName', '$hash_pw', '$email', '$admin')";
+
+            $query = $this->dbConnection->query($sql);
+
+            if(!$query){
+                throw new DatabaseExecutionException("Updating Game has failed from an execution error");
+            }
+
+            return $query;
+        }catch(DataMissingException $e) {
+            $view = new UserError();
+            $view->display($e->getMessage());
+        }catch (DatabaseExecutionException $e){
+            $view = new UserError();
+            $view->display($e->getMessage());
+        } catch (Exception $e) {
+            $view = new UserError();
+            $view->display($e->getMessage());
+        }
+
     }
 
 

@@ -31,4 +31,5 @@ return array(
     'UserLogin' => $baseDir . '/views/user/login/user_login.class.php',
     'UserModel' => $baseDir . '/models/user_model.class.php',
     'UserRegister' => $baseDir . '/views/user/register/user_register.class.php',
+    'UserRegisterVerify' => $baseDir . '/views/user/register/user_register_verify.class.php',
 );
